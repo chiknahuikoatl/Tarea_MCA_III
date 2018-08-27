@@ -19,7 +19,190 @@
 \newcommand{\exy}{e^{((x-1)^2 + (y-3)^2}}
 \begin{center}
 	\textbf{Matemáticas para las ciencias aplicadas III, Tarea I}\\
-	\textbf{\textit{Arteaga Vázquez Alan Ernesto, Almeida Rodríguez Jerónimo y Sánchez Salgado Alma Rocío}}
+	\textbf{\textit{Arteaga Vázquez Alan Ernesto, Almeida Rodríguez Jerónimo
+					y Sánchez Salgado Alma Rocío}}
 \end{center}
+
+\newpage
+
+\section{Marsden - Tromba | Sección 3.3}
+
+\textit{23. An examination of the function}
+	$$f:\mathbb{R}^2 \mapsto \mathbb{R}, (x, y) \mapsto (y -3x^2)(y -x^2)$$
+	\textit{will give an idea of the difficulty of finding conditions that
+			guarantee that a critical point is a relative extremum when Theorem
+			6 fails. Show that}\\
+
+	\textit{a) the origin is a critical point of $f$ ;}\\
+
+	Procedemos a derivar parcialmente la función, así, se sigue:
+	$$f(x,y) = y^2 -3x^2y -x^2y + 3x^4 = y^2 -4x^2y + 3x^4  $$
+	$$\frac{\partial f}{\partial x} = -8xy + 12x^3 $$
+	$$\frac{\partial f}{\partial y} = 2y - 4x^2 $$
+
+	luego, para ver que precisamente el origen es un punto crítico,
+	evaluamos las parciales en dicho punto, así:
+	$$\left. \frac{\partial f}{\partial x} \right|_{(0,0)}
+			= -8(0)(0) + 12(0)^3 = 0 $$
+	$$\left. \frac{\partial f}{\partial y} \right|_{(0,0)}
+			= 2(0) - 4(0)^2 = 0 $$
+
+	así, como todas las parciales son cero en el origen, se sigue que este es
+	un punto crítico.\\
+
+	\textit{b) $f$ has a relative minimum at $(0, 0)$ on every straight line
+			through $(0, 0)$; that is, if $g(t) = (at, bt)$, then
+			$f \circ g : \mathbb{R} \rightarrow \mathbb{R}$ has a relative
+			minimum at 0,for every choice of a and b;}\\
+
+		Consideremos ahora a la funcíón $f \circ g$:
+		$$ f \circ g = (bt)^2 - 4(at)^2(bt) + 3(at)^4$$
+		$$ = b^2t^2 - 4a^2bt^3 + 3a^4t^4$$
+
+		ahora, derivando la función compuesta, se tiene:
+		$$\frac{\partial f}{\partial t} = 2b^2t -12a^2bt^2 + 12a^4t^3
+										= 2t(b^2 - 6a^2bt + 6a^4t^2)$$
+
+		se sigue que $t = 0$ es un punto crítico correspondiente a $(x,y) = (0,0)$.
+		Ahora, derivando nuevamente la función, se tiene:
+
+		$$\frac{\partial^2 f}{\partial t^2} = 2b^2 -24a^2bt + 36a^4t^2 $$
+
+		ahora, evaluando la segunda derivada en el punto $t = 0$
+		$$\left. \frac{\partial^2 f}{\partial t^2} \right|_{0}
+			= 2b^2 -24a^2b(0) + 36a^4(0)^2 = 2b^2 $$
+
+		como
+			$$\left. \frac{\partial^2 f}{\partial t^2} \right|_{0} = 2b^2 > 0$$
+		se sigue que $t = 0$ es un mínimo local para
+		$\forall a$ si $b \neq 0$\\
+
+		Ahora, si $b = 0$, se cumple que
+			$$f \circ g (t) = 3(at)^4$$
+		así que $t = 0$ resulta ser un mínimo local para cualquier elección de
+		$a$ y $b$.\\
+
+	\textit{(c) the origin is not a relative minimum of $f$ .}\\
+	\newline
+
+
+	\textit{41. Find the absolute maximum and minimum values for
+		$$f(x, y) = sin x + cos y$$ on the rectangle $R$ defined by
+		$$0 \leq x \leq 2\pi, 0 \leq y \leq 2\pi$$}
+
+		Derivando parcialmente, se tiene:
+		$$\frac{\partial f}{\partial x} = \cos x $$
+		$$\frac{\partial f}{\partial y} = - \sin x $$
+
+		ahora, para los intervalos $0 \leq x \leq 2\pi, 0 \leq y \leq 2\pi$
+		se cumple:
+			$$\frac{\partial f}{\partial x} = 0 \quad \text{si} \quad
+				x=\frac{\pi}{2}, \frac{3\pi}{2}$$
+			$$\frac{\partial f}{\partial y} = 0 \quad \text{si} \quad
+				y=0, \pi, 2\pi$$
+
+		así, se sigue que la función tiene puntos críticos en:
+			$$(\frac{\pi}{2}, 0), (\frac{\pi}{2}, \pi), (\frac{\pi}{2}, 2\pi)$$
+			$$(\frac{3\pi}{2}, 0), (\frac{3\pi}{2}, \pi), (\frac{3\pi}{2}, 2\pi)$$
+
+		ahora, construimos la matriz Hessiana para la función derivando
+		parcialmente por segunda vez a la función, así:
+			$$ \frac{\partial^2f}{\partial x^2} = -\sin x$$
+			$$ \frac{\partial^2f}{\partial x\partial y} = 0 = \frac{\partial^2f}{\partial y\partial x}$$
+			$$ \frac{\partial^2f}{\partial y^2} = - \cos y$$
+
+			$$H(x,y) = \begin{bmatrix}
+    					\dfrac{\partial^2f}{\partial x^2} & & \dfrac{\partial^2f}{\partial x\partial y} \\
+    					& & \\
+    					\dfrac{\partial^2f}{\partial y\partial x}&  & \dfrac{\partial^2f}{\partial y^2} \\
+						\end{bmatrix} =
+						\begin{bmatrix}
+			    			-\sin x & 0 \\
+			    			0  & - \cos y \\
+						\end{bmatrix}
+						$$
+
+		luego, evaluando la matriz en los puntos críticos y sacando su determinante,
+		se tiene:
+		$$det[H(\frac{\pi}{2}, 0)] =
+			\begin{vmatrix}
+				-\sin \dfrac{\pi}{2} & 0 \\
+				0  & - \cos 0 \\
+			\end{vmatrix} =
+			\begin{vmatrix}
+				-1 & 0 \\
+				 0 & -1 \\
+			\end{vmatrix} = 1$$
+
+		Como $f_{xx} < 0$ y $det(H) > 0$, entonces corresponde a un máximo local.\\
+		$$det[H(\frac{\pi}{2}, \pi)] =
+			\begin{vmatrix}
+				-\sin \dfrac{\pi}{2} & 0 \\
+				0  & - \cos \pi \\
+			\end{vmatrix} =
+			\begin{vmatrix}
+				-1 & 0 \\
+				 0 & 1 \\
+			\end{vmatrix} = -1$$
+		Como $f_{xx} < 0$ y $det(H) < 0$, entonces corresponde a un punto de ensilladura.\\
+		$$det[H(\frac{\pi}{2}, 2\pi)] =
+			\begin{vmatrix}
+				-\sin \dfrac{\pi}{2} & 0 \\
+				0  & - \cos 2\pi \\
+			\end{vmatrix} =
+			\begin{vmatrix}
+				-1 & 0 \\
+				 0 & -1 \\
+			\end{vmatrix} = 1$$
+		Como $f_{xx} < 0$ y $det(H) > 0$, entonces corresponde a un máximo local.\\
+		\newpage
+
+
+		$$det[H(\frac{3\pi}{2}, 0)] =
+			\begin{vmatrix}
+				-\sin \dfrac{3\pi}{2} & 0 \\
+				0  & - \cos 0 \\
+			\end{vmatrix} =
+			\begin{vmatrix}
+				1 & 0 \\
+				 0 & -1 \\
+			\end{vmatrix} = -1$$
+
+		Como $f_{xx} > 0$ y $det(H) < 0$, entonces corresponde a un punto de ensilladura.\\
+		$$det[H(\frac{3\pi}{2}, \pi)] =
+			\begin{vmatrix}
+				-\sin \dfrac{3\pi}{2} & 0 \\
+				0  & - \cos \pi \\
+			\end{vmatrix} =
+			\begin{vmatrix}
+				1 & 0 \\
+				 0 & 1 \\
+			\end{vmatrix} = 1$$
+		Como $f_{xx} > 0$ y $det(H) > 0$, entonces corresponde a un mínimo local.\\
+		$$det[H(\frac{3\pi}{2}, 2\pi)] =
+			\begin{vmatrix}
+				-\sin \dfrac{3\pi}{2} & 0 \\
+				0  & - \cos 2\pi \\
+			\end{vmatrix} =
+			\begin{vmatrix}
+				1 & 0 \\
+				 0 & -1 \\
+			\end{vmatrix} = -1$$
+		Como $f_{xx} > 0$ y $det(H) < 0$, entonces corresponde a un punto de ensilladura.\\
+
+
+		Luego, evaluando máximos locales en la función para determinar
+		máximos absolutos:
+			$$ f(\frac{\pi}{2}, 0) = \sen(\frac{\pi}{2}) + cos(\pi) = 1 + 1 = 2 $$
+			$$ f(\frac{\pi}{2}, 2\pi) = \sen(\frac{\pi}{2}) + cos(2\pi) = 1 + 1 = 2$$
+
+		así, determinamos que la función $f$ tiene máximos absolutos en los puntos
+			$$(\frac{\pi}{2}, 0), (\frac{\pi}{2}, 2\pi)$$
+		y mínimo absoluto en
+			$$(\frac{3\pi}{2}, \pi)$$
+
+	\section{Marsden - Tromba | Sección 3.4}
+	\section{Hughes-Hallet | Sección 16.1}
+	\section{Anton-Bivens-Davis | Sección 14.1}
 
 \end{document}
