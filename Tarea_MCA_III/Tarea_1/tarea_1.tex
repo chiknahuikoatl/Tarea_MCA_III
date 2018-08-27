@@ -22,4 +22,55 @@
 	\textbf{\textit{Arteaga Vázquez Alan Ernesto, Almeida Rodríguez Jerónimo y Sánchez Salgado Alma Rocío}}
 \end{center}
 
+\section{\texttt{Mardsen - Tromba | Sección 3.3}}
+\textit{\textbf{$27.$}Suppose $f: \mathbb{R}^3 \mapsto \mathbb{R}$ is $C^2$, and that $x_{0}$ is a critical point for $f$. Suppose $Hf (x_{0})(h) = h_{1}^2 + h_{2}^2 + h_{3}^2 + 4h_{2}h_{3}$ Does $f$ have a local maximum, minimum, or saddle a $x_{0}$?}\
+\textit{\textbf{51.} 
+	\begin{itemize}
+		\item[(a)] Let f be a $C^1$ function on the real line $\mathbb{R}$. Suppose that f has exactly one critical point $x_{0}$ that is a strict local minimum for $f$ . Show that $x_{0}4$ is also an absolute minimum for $f$; that is, that $f(x) \geq f(x_{0})$ for all $x$.
+		\item[(b)] The next example shows that the conclusion of part (a) does not hold for functions of more tha one variable. Let $f: \mathbb{R}^2 \mapsto \mathbb{R}$ be defined by 
+		\[f(x,y) = -y^4-e^{-x^2}+2y^2 \sqrt{e^x + e^{-x^2}}\]
+	\end{itemize}
+}
+\section{\texttt{Mardsen - Tromba | Sección 3.4}}
+\textit{\textbf{26.}An irrigation canal in Arizona has concrete sides and bottom with trapezoidal cross section of area
+ $A = y(x + y \tan \theta)$ and wetted perimeter \\
+ $P = x + \dfrac{2y}{\cos \theta}$, where $x = $bottom width, $y = $water depth, and $\theta =$side inclination, measured
+ from vertical.The best design for a fixed inclination $\theta$ is found by solving $P =$ minimum subject to the condition
+ $A =$ constant. Show that $y^2 =\dfrac{A \cos \theta}{2 - \sin \theta}$ 
+}
+\section{\texttt{Hugues - Hallet | Sección 16.1}}
+\textit{\textbf{5.} Figure $16.8$ shows a contour plot of population density, people per square kilometer, in a rectangle of land $3$ km by $2$ km. Estimate the population in the refion represented by Figure $16.8$}
+
+Sea R el rectángulo y $f(x,y)$ la densidad poblacional en el punto $(x,y)$, la población está dada por $\int_{R}f(x,y)dA$.. Si aproximamos la integral con sumas de Riemann usando la información de cada km por km, entonces podemos tomar la densidad en un un punto y sumarlos. 
+Vamos a dividir el eje $y$ en dos partes y el eje $x$ en tres, tenemos los puntos: 
+(0.5, 1.5)=500, (0.5, 0.5)= 650, (1.5,1.5)= 450, (1.5, 0.5)=200, (2.5, 1.5)=100 y (2.5, 0.5)= 400
+por lo que la densidad por km cuadrado es la suma de estos valores
+\[\int_{R}(x,y)dA\approx 500 + 450 + 100 + 650 + 200 + 400 = 2300\]
+
+\textit{\textbf{6-12} Decide(without calculation) wheter the integrals are positive, negative, or zero. Let $D$ be the region inside the unit circle centered at the origin, let $R$ be the rigth half of $D$ and let $B$ be the bottom half of $D$}
+\begin{itemize}
+	\item[6.]$\int_{D}dA$
+	         Es positiva, la integral de $f(x,y) = 1$
+	\item[7.]$\int_{R}5xdA$
+			  La integral es positiva, tomemos en cuenta que es la mitad derecha del área total del círculo unitario, entonces toma x toma valores mayores a $0$. La función siendo integrada es $f(x,y) = 5x$
+	\item[8.]$\int_{B}5xdA$
+			  B es una función simétrica respecto a $x$ por lo que la integral se cancela: $f(x,y) = -f (-x,y)$ y el resutado es cero.
+	\item[9.]$\int_{D}(y^3 + y^5)dA$
+		  	   D es simétrico respecto a $y$, por lo que la integral es cero también
+	\item[10.]$\int_{B}(y^3+y^5)dA$
+			   Los valores de la función con $y < 0$ (porque es la mitad de abajo del círculo)son negativos,por lo que la integral también lo es.
+	\item[11.]$\int_{D}(y-y^3)dA$
+				$f(x,y) = y- y^3$ es una función impar, y D es simétrica respecto a $y$ por lo que la integral se cancela y es igual a cero
+	\item[12.]$\int_{B}(y-y^3)dA$	
+			 La función $f(x,y) = y -y^3$ es negativa en la región B ya que todos los valores de $y$ en esa región son negativos, entonces tenemos que $\mid y^3 \mid < \mid y \mid$ por lo que la integral es negativa. 
+\end{itemize}
+
+\section{\texttt{Anton - Bivens - Davis | Sección 14.1}}
+\textit{\textbf{10.} $\int^{\pi}_{\pi / 2}\int^2_1 x \cos xy dy dx$}\
+En nuestra herramienta de cálculo pusimos :
+N[Integrate[x Cos[x y], {x, 1, 2}, {y, Pi/2, Pi}]] y nos arroja :
+\[int^{\pi}_{\pi /2}\int^2_1 x \cos xy dy dx = - \dfrac{4}{\pi} \approx -1.27324\]
+\textit{\textbf{28.}Use the result in Exercise 27 to evaluate the integral \[\int^{ln 3}_{0} \int^1_-1 \sqrt{e^y + 1}\tan x dx dy\]by inspection. Explain your reasoning}\
+\textit{\textbf{33}}
+
 \end{document}
