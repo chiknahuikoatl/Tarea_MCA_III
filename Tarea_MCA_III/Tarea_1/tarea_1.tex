@@ -416,21 +416,26 @@ N[Integrate[x Cos[x y], {x, 1, 2}, {y, Pi/2, Pi}]] y nos arroja :
 	$$ f(\frac{1}{4}, \frac{1}{4}) =  - \frac{1}{4}, \quad f(\frac{3}{4}, \frac{1}{4}) = \frac{1}{4} , \quad
 	   f(\frac{5}{4}, \frac{1}{4}) =  \frac{3}{4} , \quad f(\frac{7}{4}, \frac{1}{4}) = \frac{5}{4} $$
 
-	luego, la suma de Riemann resultante está dada por:
+	Se tiene, que como los valores de $x^{*}_{k}$ y $ y^{*}_{k}$ van cambiando
+	cada $\frac{1}{2}$ (por estar seleccionados en el centro de los rectángulos),
+	se tiene:
+		$$ \Delta A_k = \Delta x^{*}_{k} \Delta y^{*}_{k}
+					  = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4}$$
+	 luego, la suma de Riemann resultante está dada por:
 
 	$$ \sum_{k=1}^{16} f(x^{*}_{k}, y^{*}_{k}) \Delta A_{k} = - \frac{1}{4}(1) +
-	  	\frac{1}{4}(1) + \frac{3}{4}(1) + \frac{5}{4}(1) + (- \frac{5}{4})(1) +
-		(- \frac{3}{4})(1) + (- \frac{1}{4})(1) + \frac{1}{4}(1)  $$
-	$$ + (- \frac{9}{4})(1) + (- \frac{7}{4})(1) + (- \frac{5}{4})(1) + (- \frac{3}{4})(1)
-	   + (- \frac{13}{4})(1) + (- \frac{11}{4})(1) + (- \frac{9}{4})(1) + (- \frac{7}{4})(1) $$
-	$$  = - \frac{1}{4} + \frac{1}{4} + \frac{3}{4} + \frac{5}{4} + - \frac{5}{4}
+	  	\frac{1}{4}(\frac{1}{4}) + \frac{3}{4}(\frac{1}{4}) + \frac{5}{4}(\frac{1}{4}) + (- \frac{5}{4})(\frac{1}{4}) +
+		(- \frac{3}{4})(\frac{1}{4}) + (- \frac{1}{4})(\frac{1}{4}) + \frac{1}{4}(\frac{1}{4})  $$
+	$$ + (- \frac{9}{4})(\frac{1}{4}) + (- \frac{7}{4})(\frac{1}{4}) + (- \frac{5}{4})(\frac{1}{4}) + (- \frac{3}{4})(\frac{1}{4})
+	   + (- \frac{13}{4})(\frac{1}{4}) + (- \frac{11}{4})(\frac{1}{4}) + (- \frac{9}{4})(\frac{1}{4}) + (- \frac{7}{4})(\frac{1}{4}) $$
+	$$  = \frac{1}{4} \Big[ - \frac{1}{4} + \frac{1}{4} + \frac{3}{4} + \frac{5}{4} + - \frac{5}{4}
 		- \frac{3}{4} - \frac{1}{4} + \frac{1}{4}
 	    - \frac{9}{4} - \frac{7}{4} - \frac{5}{4} - \frac{3}{4}
-	    - \frac{13}{4} - \frac{11}{4} - \frac{9}{4} - \frac{7}{4} $$
+	    - \frac{13}{4} - \frac{11}{4} - \frac{9}{4} - \frac{7}{4}  \Big]$$
 
-	$$  = - \frac{9}{4} - \frac{7}{4} - \frac{5}{4} - \frac{3}{4}
-	      - \frac{13}{4} - \frac{11}{4} - \frac{9}{4} - \frac{7}{4} $$
-	$$ = - \frac{64}{4} = -16 $$
+	$$  = \frac{1}{4} \Big[ - \frac{9}{4} - \frac{7}{4} - \frac{5}{4} - \frac{3}{4}
+	      - \frac{13}{4} - \frac{11}{4} - \frac{9}{4} - \frac{7}{4} \Big] $$
+	$$ = \frac{1}{4} \Big[ - \frac{64}{4} \Big] = \frac{1}{4}[ -16]  = -4 $$
 
 	\textit{ (b) Compare the result in part (a) to the exact value of the integral. }\\
 
@@ -447,9 +452,8 @@ N[Integrate[x Cos[x y], {x, 1, 2}, {y, Pi/2, Pi}]] y nos arroja :
 		$$  = [ 2y - 2y^2 ] \Big|_0^2 $$
 		$$  = 4 - 8  = - 4 $$
 
-		Así, la diferencia ente el resultado en la parte (a) y la parte (b) es de
-		$12$ \\
-		
+		Así, la diferencia ente el resultado en la parte (a) y la parte (b) es nula\\
+
 	\textit{\textbf{23 - 26 True - False.} Determine whether the statement is
 	true or false. Explain your answer.\\}
 
