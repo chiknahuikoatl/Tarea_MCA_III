@@ -370,6 +370,49 @@ por lo que la densidad por km cuadrado es la suma de estos valores
 				$f(x,y) = y- y^3$ es una función impar, y D es simétrica respecto a $y$ por lo que la integral se cancela y es igual a cero
 	\item[12.]$\int_{B}(y-y^3)dA$
 			 La función $f(x,y) = y -y^3$ es negativa en la región B ya que todos los valores de $y$ en esa región son negativos, entonces tenemos que $\mid y^3 \mid < \mid y \mid$ por lo que la integral es negativa.
+	\item[15.] \textit{Figure 16.10 shows the temperature,
+			   in ºC, in a 5 meter by 5 meter heated room. Using Riemann sums,
+			   estimate the average temperature in the room.}\\
+
+	Tomando como punto de referencia el extremo inferior izquierdo de cada uno
+	de los rectángulos, podemos expresar a la máxima temperatura en un cierto
+	cuadro mediante la siguiente suma de Riemann (consideramos $\Delta A = 1$,
+	pues los cambios en $x^{*}_{k}$ y $y^{*}_{k}$ se dan cada unidad):
+
+		$$ \sum_{k=1}^{25} f(x^{*}_{k}, y^{*}_{k}) \Delta A_{k} =
+		   	 31(1) + 29(1) + 28(1) + 27(1) + 27(1)  $$
+		$$ + 29(1) + 28(1) + 27(1) + 27(1) + 26(1) $$
+		$$ + 28(1) + 27(1) + 26(1) + 26(1) + 26(1) $$
+		$$ + 26(1) + 26(1) + 25(1) + 25(1) + 25(1) $$
+		$$ + 25(1) + 25(1) + 24(1) + 24(1) + 24(1) $$
+
+		$$ = (1) [31 + 29 + 28 + 27 + 27  $$
+   		$$ + 29 + 28 + 27 + 27 + 26 $$
+   		$$ + 28 + 27 + 26 + 26 + 26 $$
+   		$$ + 26 + 26 + 25 + 25 + 25 $$
+   		$$ + 25 + 25 + 24 + 24 + 24]  = 661$$
+
+	Análogamente, para calcular la mínima temperatura en un cierto rectángulo,
+	tomamos la siguiente suma de Riemann, considerando el extremo superior
+	derecho de cada rectángulo:
+
+	$$ \sum_{k=1}^{25} f(x^{*}_{k}, y^{*}_{k}) \Delta A_{k} =
+		 27(1) + 26(1) + 26(1) + 25(1) + 25(1)  $$
+	$$ + 26(1) + 25(1) + 25(1) + 25(1) + 25(1) $$
+	$$ + 25(1) + 24(1) + 24(1) + 24(1) + 24(1) $$
+	$$ + 24(1) + 23(1) + 23(1) + 23(1) + 23(1) $$
+	$$ + 23(1) + 21(1) + 21(1) + 22(1) + 23(1) $$
+
+	$$ = (1) [27 + 26 + 26 + 25 + 25  $$
+	$$ + 26 + 25 + 25 + 25 + 25 $$
+	$$ + 25 + 24 + 24 + 24 + 24 $$
+	$$ + 24 + 23 + 23 + 23 + 23 $$
+	$$ + 23 + 21 + 21 + 22 + 23] = 602 $$
+
+	Así, promediando las temperturas extremas en cada cuadro, obtenemos la temperatura
+	promedio del cuarto, así:
+		$$ \frac{661 + 602}{2} = 631.5$$
+
 \end{itemize}
 	\section{Anton-Bivens-Davis | Sección 14.1}
 	\textit{\textbf{10.} $\int^{\pi}_{\pi / 2}\int^2_1 x \cos xy dy dx$}\
