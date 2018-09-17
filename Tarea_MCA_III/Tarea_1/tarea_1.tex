@@ -17,27 +17,89 @@
 \newcommand{\deriv}[2]{\dfrac{\delta #1}{\delta #2}}
 \newcommand{\ext}{e^{ax-bt}}
 \newcommand{\exy}{e^{((x-1)^2 + (y-3)^2}}
+\providecommand{\norm}[1]{\parallel #1\parallel}
 \begin{center}
 	\textbf{Matemáticas para las ciencias aplicadas III, Tarea I}\\
 	\textbf{\textit{Arteaga Vázquez Alan Ernesto, Almeida Rodríguez Jerónimo y Sánchez Salgado Alma Rocío}}
 \end{center}
 
 \section{\texttt{Mardsen - Tromba | Sección 3.3}}
-\textit{\textbf{$27.$}Suppose $f: \mathbb{R}^3 \mapsto \mathbb{R}$ is $C^2$, and that $x_{0}$ is a critical point for $f$. Suppose $Hf (x_{0})(h) = h_{1}^2 + h_{2}^2 + h_{3}^2 + 4h_{2}h_{3}$ Does $f$ have a local maximum, minimum, or saddle a $x_{0}$?}\
-\textit{\textbf{51.} 
+\textit{\textbf{$27.$}Suppose $f: \mathbb{R}^3 \mapsto \mathbb{R}$ is $C^2$, and that $x_{0}$ is a critical point for $f$. Suppose $Hf (x_{0})(h) = h_{1}^2 + h_{2}^2 + h_{3}^2 + 4h_{2}h_{3}$ Does $f$ have a local maximum, minimum, or saddle a $x_{0}$?}\\
+
+Tenemos que $Hf(x_0)(h) = h_1^2+h_2^2+h_3^2++4h_2  h_3$, si factorizamos, entonces: 
+\[Hf(x_0)(h)= h_1^2+(h_2+h_3)^2+2h_2h_3\]
+\[g \left( \dfrac{h}{ \parallel h \parallel}\right). \parallel h \parallel^2\]
+donde $\norm{h} ^2 = h_1^2+h_2^2+h_3^2$ y $g $ una función. $H(h)\geq 1. \norm{h}^2$ entonces, dependiendo de $h_2, h_3$  $H(h)$ puede ser positivo o negativo y así tener un local mínimo o máximo o un punto de ensilladura.
+Sea $h_1=h_2=h_3$, luego $H(h)= 7h^2$ siendo positivo (mínimo local)
+$h_1=h_3= h$, $h_2 = -h$, luego $H(h) = -h^2$ siendo negativo (máximo local). 
+
+Por lo tanto, el punto críto es un punto de ensilladura, en una dirección tiene mínimo y en otra tiene un máximo.
+
+
+\textit{\textbf{51.}}
 	\begin{itemize}
-		\item[(a)] Let f be a $C^1$ function on the real line $\mathbb{R}$. Suppose that f has exactly one critical point $x_{0}$ that is a strict local minimum for $f$ . Show that $x_{0}4$ is also an absolute minimum for $f$; that is, that $f(x) \geq f(x_{0})$ for all $x$.
+		\item[(a)] Let f be a $C^1$ function on the real line $\mathbb{R}$. Suppose that f has exactly one critical point $x_{0}$ that is a strict local minimum for $f$ . Show that $x_{0}$ is also an absolute minimum for $f$; that is, that $f(x) \geq f(x_{0})$ for all $x$.
+		
+		Como $f$ tiene exactamente un punto crítico en $x_{0}$ y es una función de $C'$, entonces : 
+		$f'(x) = 0$ para $x= x_{0}$ y $f'(x)\neq 0$ para $x\neq x_{0}$
+		$f$ es continua en la recta real, entonces, ya sea que $f$ aumente o decremente en cualquier punto $x\neq x_{0}$ . Como $x_{0}$ es un mínimo local, tenemos que : 
+		$f(x_0)< f(x)$ para todo $0<| x-x_{0}| < \delta$, entonces para $x> x_{0}$ la derivada de $x$ será mayor a cero y para $x<x_{0}$ la derivada de $f$ evaluada en $x$ será menor a cero. 
+		Luego, $f$ está decreciendo para toda $x$ tal que $x<x_{0}$, así $f(x)\geq f(x_0)$ para toda $x$ que pertenece a los reales y $x_0$ es también un mínimo absoluto de $f$
 		\item[(b)] The next example shows that the conclusion of part (a) does not hold for functions of more tha one variable. Let $f: \mathbb{R}^2 \mapsto \mathbb{R}$ be defined by 
-		\[f(x,y) = -y^4-e^{-x^2}+2y^2 \sqrt{e^x + e^{-x^2}}\]
+		\[f(x,y) = -y^4-e^{-x^2}+2y^2 \sqrt{e^x + e^{-x^2}}\] 
+		show that $(0,0)$ is the only critical point for $f$ and that is a local minimum
+		\[\bigtriangledown f = \left[ 2xe^{-x^2}+2y^2 \dfrac{\left( e^x -2xe^{-x^2} \right)}{2\sqrt{e^x+e^{-x^2}}}\right]i +\left[-4y^3+4y \sqrt{e^x+e^{-x^2}} \right]j\]
+		Ahora $\dfrac{\delta f}{\delta x} = 0$, entonces : 
+		\[2xe^{-x^2}+ \dfrac{2y^2 \left(e^x-ex e^{-x^2} \right)}{2\sqrt{e^x + e^{-x^2}}}= 0\]
+		\[y^2(e^x-2x e^{-x^2})= -2xe^{-x^2}\sqrt{e^x+ e^{-x^2}}\]
+		\[y^4 \left(e^{2x}+4x^2 e^{x-x^2} \right) = 4x^2e^{-2x^2}\left(e^x + e^{-x^2}\right)\]
+	$(1):$
+		\[y^4\left(e^{2x}+4x^2e^{-2x^2}-4xe^{x-x^2} \right)+ 4x^2e^{-2x^2}\left( e^x+ e^{-x^2}\right)=0 \]
+		También $\dfrac{\delta f}{\delta y} = 0$, entonces $4y\left(-y^2+ \sqrt{e^x + e^{-x^2}}\right)=0$. Así $y=0$ o $(2):$ 
+		\[y^2= \sqrt{e^x+ e^{-x^2}}\]
+		Cuando $y = 0$ de $(1)$
+		\[2x \left(e^{-x^2+x}+ e^{-2x^2} \right)=0\]
+		Entonces $x=0$, así que un punto crítico es $(0,0)$
+		Ahora, cuando $y = \sqrt{e^x+ e^{-x^2}}$, de $(1)$ tenemos que :
+		\[(e^x+ e^{-x^2})(e^{2x}+4x^2e^{-2x^2}-4xe^{x-x^2})+2xe^{-x^2}(e^x+ e^{-x^2})=0\]
+		Ó : 
+		\[(e^x+e^{-x^2})x(e^x-2xe^{-x^2})^2 +2xe^{-x^2}=0\]
+		Ó :
+		\[2x=\dfrac{-\left( e^x- 2xe^{-x^2}\right)^2}{2e^{-x^2}}\]
+		y esta última no cumple para algún $x\epsilon R$, así que el único punto crítico es $(0,0)$
+		Para ver que es un mínimo local : 
+		\[\dfrac{\delta^2 f}{\delta x^2}=\dfrac{-4x^2e^{-x^2}+2e^{-x^2}+y^2 \left[ \left( e^x+ 4x^2-2e^{-x^2}\right)x \sqrt{e^x+e^{-x^2}}- \dfrac{\left(e^x- 2xe^{-x^2} \right)^2}{2 \sqrt{e^x+ e^{-x^2}}} \right]}{\left(e^x+ e^{-x^2} \right)}\]
+		entonces : $\dfrac{\delta ^2 f}{\delta y^2}(0,0) = 2 $ y también $\dfrac{\delta ^2 f}{\delta y^2}= -12y^2+ 8 \sqrt{e^x + e^-x^2}$
+		y $\dfrac{\delta ^2 f}{\delta y^2}(0,0)= 8 \sqrt{2}$ Y $\dfrac{\delta^2 f}{\delta y \delta x}= 2y \dfrac{(e^x- 2xe^{-x^2})}{\sqrt{e^x+ e^{-x^2}}}$, también $\dfrac{\delta^2 f(0,0)}{\delta y \delta x}= 0$, ahora :
+		\[\left(\dfrac{\delta^2 f}{\delta y \delta x}(0,0) \right)^2 - \dfrac{\delta^2 f}{\delta x^2}(0,0).\dfrac{\delta ^2 f}{\delta y^2}(0,0) = -16\sqrt{2}<0\]
+		También : 
+		\[\dfrac{\delta ^2 f}{\delta x^2}(0,0)+\dfrac{\delta ^2 f}{\delta y^2}(0,0)= 2+8\sqrt{2}> 0\]
+		Por lo tanto, $(0,0)$ es un punto mínimo local.
 	\end{itemize}
-}
+
 \section{\texttt{Mardsen - Tromba | Sección 3.4}}
+
 \textit{\textbf{26.}An irrigation canal in Arizona has concrete sides and bottom with trapezoidal cross section of area
  $A = y(x + y \tan \theta)$ and wetted perimeter \\
  $P = x + \dfrac{2y}{\cos \theta}$, where $x = $bottom width, $y = $water depth, and $\theta =$side inclination, measured
  from vertical.The best design for a fixed inclination $\theta$ is found by solving $P =$ minimum subject to the condition
  $A =$ constant. Show that $y^2 =\dfrac{A \cos \theta}{2 - \sin \theta}$ 
 }
+
+Tenemos que $f(x,y, \lambda) = x+ 2y \sec \theta + \lambda(xy+ y^2 tan\theta - A)$
+Ahora $\dfrac{\delta f}{\delta x}= 1+ \lambda y = 0$, entonces $\lambda = \dfrac{-1}{y}$
+\[\dfrac{\delta f}{\delta y} = 2 \sec \theta + \lambda(x + 2y\tan \theta)= 0\]
+\[\lambda = \dfrac{-2 \sec\theta}{x+2y \tan \theta}\] 
+y 
+\[\dfrac{\delta f}{\delta \lambda} = xy+ y^2 \tan \theta - A =0 \Longleftrightarrow A = xy+ y^2 \tan \theta\]
+Igualamos los valores de $\lambda$, entonces tenemos :
+\[2y = \dfrac{x+ 2y \tan \theta}{\sec \theta}= \dfrac{x\cos \theta+ 2y \sin \theta}{1}\]
+\[\Rightarrow 2y(1-\sin \theta) = x \cos \theta\]
+\[\Rightarrow x = \dfrac{2y(1-\sin \theta)}{\cos \theta}= 2y (\sec \theta - \tan \theta)\]
+Susstituyendo dentro $\dfrac{\delta f}{\delta \lambda} = 0$ tenemos que :
+\[A = 2y^2(\sec \theta - \tan \theta)+ y^2\tan \theta = y^2 (2 \sec\theta - \tan \theta)\]
+\[\Rightarrow y^2 = \dfrac{A}{2\sec \theta - \tan \theta}\]
+\[y^2 = \dfrac{A \cos \theta}{2- \sin \theta}\]
 \section{\texttt{Hugues - Hallet | Sección 16.1}}
 \textit{\textbf{5.} Figure $16.8$ shows a contour plot of population density, people per square kilometer, in a rectangle of land $3$ km by $2$ km. Estimate the population in the refion represented by Figure $16.8$}
 
@@ -66,11 +128,58 @@ por lo que la densidad por km cuadrado es la suma de estos valores
 \end{itemize}
 
 \section{\texttt{Anton - Bivens - Davis | Sección 14.1}}
-\textit{\textbf{10.} $\int^{\pi}_{\pi / 2}\int^2_1 x \cos xy dy dx$}\
-En nuestra herramienta de cálculo pusimos :
-N[Integrate[x Cos[x y], {x, 1, 2}, {y, Pi/2, Pi}]] y nos arroja :
-\[int^{\pi}_{\pi /2}\int^2_1 x \cos xy dy dx = - \dfrac{4}{\pi} \approx -1.27324\]
-\textit{\textbf{28.}Use the result in Exercise 27 to evaluate the integral \[\int^{ln 3}_{0} \int^1_-1 \sqrt{e^y + 1}\tan x dx dy\]by inspection. Explain your reasoning}\
-\textit{\textbf{33}}
+\textit{\textbf{10.} $\int^{\pi}_{\pi / 2}\int^2_1 x \cos xy dy dx$}\\
 
+Primero resolvemos la integral $\int^2_1 x \cos xy dy$ con cambio de variable. Sea $u= xy$, entonces si derivamos con respecto a $y$,  $du = x dy$, por lo que la integral ahora es 
+\[\int^2_1 \cos u du = \sin u\mid ^2 _1\]
+\[= \sin(xy) \mid^{y=2}_{y=1}\]
+Y ahora resolvemos la doble integral sustituyendo : 
+\[\int^\pi_{\pi / 2} \sin(xy) \mid^{y=2}_{y=1} dx\]
+\[\int^\pi_{pi / 2} \sin(2x)-\sin(x) dx\]
+Así: 
+\[\int^\pi_{pi / 2} \sin(2x) dx - \int^\pi_{pi / 2} \sin(x) dx\]
+Para la primera integral, definimos a $u$ como $u = 2x$ entonces $du = 2 dx$, luego $dx = 1/2 du$
+\[1/2 \int^\pi_{pi / 2}\sin(u) du - \int^\pi_{pi / 2} \sin(x) dx\]
+\[1/2(-\cos(2x)\mid^\pi_{\pi / 2})-(-\cos(x)\mid^\pi_{\pi / 2}) \]
+\[= 1/2[-\cos(2\pi)+cos(\pi)]+ [\cos(\pi)-\cos(\pi / 2)] \]
+Evaluamos : 
+\[= 1/2(-1-1)+(-1+0) = -2\]
+Entonces: 
+\[\int^{\pi}_{\pi / 2}\int^2_1 x \cos(xy) dy dx = -2\]
+\textit{\textbf{28.}Use the result in Exercise 27 to evaluate the integral 
+\[\int^{ln 3}_{0} \int_1 ^1 \sqrt{e^y + 1}\tan x dx dy\] by inspection. Explain your reasoning}\\
+
+Del ejercicio $27$ tenemos que:
+\[\int_{R}\int f(x,y)dA = \int_a^b[\int_c^dg(x)h(y)dy]dx\]
+\[\int_a^b g(x)[\int_c^dh(y)dy ]dx\]
+\[[\int_a^b g(x) dx][\int_c^d h(y) dy]\]
+Entonces, sustituyendo tenemos que 
+\[\int^{ln 3}_{0} \int_1 ^1 \sqrt{e^y + 1}\tan x dx dy=[\int_o^{ln3} \sqrt{e^y + 1}dy][\int_1^1tan x dx]\]
+Sabemos que $tan x$ es una función impar, por lo que al ser evaluada con $1$ y $-1$ es igual a cero, por lo tanto la integral es $0$\
+
+\textit{\textbf{33.}Evaluate the integral by choosing a convenient order of integration:}
+\[\int \int_{R}xcos(xy)\cos^2 \pi x dA; R = [0, \dfrac{1}{2}] x [0, \pi] \]
+
+Tenemos la integral:
+ \[\int_{0}^{1/2}\int_{0}^\pi x\cos(xy) \cos^2 (\pi x) dy dx\]
+El orden por el que optaremos será el siguiente: 
+\[\int_{0}^{1/2} \left[ \int_{0}^{\pi} x\cos(xy) \cos^2(\pi x)dy \right] dx \]
+Resolvemos primero:
+\[\int_{0}^{\pi} x\cos(xy) \cos^2(\pi x)dy\]
+Como estamos integrando respecto a $y$, entonces podemos sacar las constantes, así:
+\[x\cos^2(\pi x)\int_{0}^{\pi} \cos(xy) dy\]
+Hacemos cambio de variable, sea $u = xy$, entonces $du = x dy$ y $dy = du \left( \dfrac{1}{x} \right)$
+\[x\cos^2(\pi x)\int_{0}^{\pi} \cos(xy) dy = x\cos^2(\pi x)\left[ \dfrac{1}{x} \int_{0}^{\pi}\cos u du \right] \]
+\[= x\cos^2(\pi x)\left[\dfrac{1}{x}\left(\sin(xy)|_{o}^{\pi}\right) \right]\]
+\[= x\cos^2(\pi x)\left[\dfrac{1}{x} \left(\sin(\pi x)- \sin(0) \right) \right]= x\cos^2(\pi x)\left[ \dfrac{1}{x} \left(\sin(\pi x)\right) \right]\]
+\[= \cos^2(\pi x) \sin(\pi x) \left(\dfrac{1}{x} \right)= \cos^2(\pi x)\sin(\pi x)\]
+Entonces : 
+\[\int_{0}^{1/2} \left[ \int_{0}^{\pi} x\cos(xy) \cos^2(\pi x)dy \right] dx = \int_{0}^{1/2}\cos^2(\pi x)\sin(\pi x) dx\]
+\[=\int_{0}^{1/2}\sin(\pi x)\cos^2(\pi x) dx\]
+Sea $u= \pi x$, entonces $du= \pi dx$ y $dx= \dfrac{1}{\pi}du$, así: 
+\[=\dfrac{1}{\pi} \int_{0}^{\pi/2}\sin u \cos^2u du\]
+Hagamos un cambio de variable más, sea $v = \cos u$, entonces $dv = -\sin(u)du$ por lo que:
+\[= \dfrac{1}{\pi} \int_{0}^{\pi / 2}v^2 dv = -\dfrac{1}{\pi}\left[\dfrac{v^3}{3}|_{0}^{\pi / 2}\right]\]
+\[=-\dfrac{1}{\pi}\left[\dfrac{\cos(\pi x)}{3} |_{0}^{1/2}\right]= -\dfrac{1}{\pi}\left[\dfrac{\cos(\pi x)}{3}|_{0}^{1/2}\right]\]
+\[-\dfrac{1}{\pi}\left[\dfrac{1}{3} \cos(\pi / 2)- \cos(0)\right]= \dfrac{1}{3\pi}\]
 \end{document}
