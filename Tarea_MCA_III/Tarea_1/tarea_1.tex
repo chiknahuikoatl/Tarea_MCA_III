@@ -376,14 +376,119 @@ por lo que la densidad por km cuadrado es la suma de estos valores
 En nuestra herramienta de cálculo pusimos :
 N[Integrate[x Cos[x y], {x, 1, 2}, {y, Pi/2, Pi}]] y nos arroja :
 \[int^{\pi}_{\pi /2}\int^2_1 x \cos xy dy dx = - \dfrac{4}{\pi} \approx -1.27324\]
-\textit{\textbf{28.}Use the result in Exercise 27 to evaluate the integral \[\int^{ln 3}_{0} \int^1_-1 \sqrt{e^y + 1}\tan x dx dy\]by inspection. Explain your reasoning}\
-\textit{\textbf{33}}\\
 
 	\textit{\textbf{18.} (a) Let $f(x,y) = x - 2y$,and as shown in Exercise 17,
 	let the rectangle $ R = [0, 2] x [0, 2]$ be subdivided into 16 subrectangles.\\
 	\newline
 	Take $(x^{*}_{k}, y^{*}_{k})$ to be the center of the $k-th$ rectangle, and approximate
 	the double integral of f over R by the resulting Riemann sum.}\\
+
+	\textit{\textbf{23 - 26 True - False.} Determine whether the statement is
+	true or false. Explain your answer.\\}
+
+	\textit{\textbf{23.} In the definition of a double integral}
+
+		$$  \iint\limits_{R} f(x,y)\mathrm{d}A = \lim\limits_{n \rightarrow + \infty}
+		 	\sum_{k=1}^{n} f(x^{*}_{k}, y^{*}_{k}) \Delta A_{k} $$
+
+	\textit{ the symbol $ \Delta A_{k}$ represents a rectangular region within $R$
+	 		from which the point $ (x^{*}_{k}, y^{*}_{k}) $ is taken.}\\
+
+	Decimos que el enunciado es \textbf{cierto}. Considerememos el siguiente texto extraído
+	del libro \textit{Calculus - 10th Edition por Anton /Bivens} para realizar el
+	cálculo del volumen entre una superficie $ z = f(x,y)$ y una región $R$, donde
+	las secciones resaltadas con negritas sustentan la respuesta: \\
+
+	- Using lines parallel to the coordinate axes, divide the rectangle
+	enclosing the region R into subrectangles, and exclude from consideration
+	all those subrectangles that contain any points outside of R.
+	\textbf{This leaves only rectangles that are subsets of R.} Assume that there are $n$
+	such rectangles, and \textbf{denote the area of the kth such rectangle by $A_k$.} \\
+
+	- Choose any arbitrary point in each subrectangle, \textbf{and denote the point in
+	the kth subrectangle by $ (x^{*}_{k}, y^{*}_{k}) $.} The product
+	$ f(x^{*}_{k}, y^{*}_{k}) \Delta A_k$  is the volume of a rectangular
+	parallelepiped with base area $A_k$ and height $f(x^{*}_{k}, y^{*}_{k})$,so the sum
+
+		$$ \sum_{k=1}^{n} f(x^{*}_{k}, y^{*}_{k}) \Delta A_{k} $$
+
+	can be viewed as an approximation to the volume V of the entire solid.\\
+
+	\textit{\textbf{24.} If R is the rectangle $ \{(x,y):1 \leq x \leq 4,0 \leq y \leq 3\} $
+			and $\int_{0}^{3} f(x,y) dy = 2x$, then}
+
+		$$ \iint\limits_{R} f(x,y)\mathrm{d}A = 15 $$
+	\
+	Se tiene que el teorema de Fubini enuncia:\\
+	\textit{ Let R be the rectangle defined by the inequalities $a \leq x \leq b$, $c \leq y \leq d$ }.\\
+	\textit{ If $f(x, y)$ is continuous on this rectangle, then }
+
+		$$ \iint\limits_{R} f(x,y)\mathrm{d}A = \int_{c}^{d} \int_{a}^{b} f(x,y) dx dy
+			= \int_{a}^{b} \int_{c}^{d} f(x,y) dy dx  $$
+
+	Así, aplicando el teorema de Fubini, se sigue:
+		$$ \iint\limits_{R} f(x,y)\mathrm{d}A = \int_{1}^{4} \int_{0}^{3} f(x,y) dy dx
+		 	= \int_{1}^{4} 2x dx = \frac{2x^2}{2} \Big|_1^4 = x^2 \Big|_1^4 = 16 - 1 = 15 $$
+
+		Así, el enunciado resulta ser \textbf{cierto}.\\
+
+	\textit{\textbf{25.} If R is the rectangle $ \{(x,y):1 \leq x \leq 5,2 \leq y \leq 4\} $,
+			then}
+
+		$$ \iint\limits_{R} f(x,y)\mathrm{d}A = \int_{1}^{5} \int_{2}^{4} f(x,y) dx dy $$
+
+	De igual forma, aplicando el teorema de Fubini, como en ele ejercicio anterior se tiene:
+
+		$$ \iint\limits_{R} f(x,y)\mathrm{d}A = \int_{2}^{4} \int_{1}^{5} f(x,y) dx dy $$
+
+			o bien:
+
+		$$ \iint\limits_{R} f(x,y)\mathrm{d}A = \int_{1}^{5} \int_{2}^{4} f(x,y) dy dx $$
+
+	pero la integral propuesta no puede suceder, dados los límites que caractrizan
+	al rectángulo $R$ por lo que, se sigue que el enunciado es \textbf{falso}.\\
+
+	\textit{\textbf{26.} Suppose that for some region R in the xy-plane}
+			$$ \iint\limits_{R} f(x,y)\mathrm{d}A = 0 $$
+	\textit{ If $R$ is subdivided into two regions $R_1$ and $R_2$, then }
+			$$ \iint\limits_{R_1} f(x,y)\mathrm{d}A = - \iint\limits_{R_2} f(x,y)\mathrm{d}A  $$
+
+	Citando al libro \textit{Calculus} de Anton-Bivens, en la página 1006, en un
+	apartado de Propiedades de Integales Dobles, menciona lo siguiente:\\
+
+	\textit{It is evident intuitively that if $f(x, y)$ is nonnegative on a
+	region R, then subdividing R into two regions $R_1$ and $R_2$ has the effect
+	of subdividing the solid between R and $z = f (x , y)$ into two solids,
+	the sum of whose volumes is the volume of the entire solid. This suggests
+	the following result, which holds even if $f$ has negative values:}
+
+		$$ \iint\limits_{R} f(x,y)\mathrm{d}A
+			= \iint\limits_{R_1} f(x,y)\mathrm{d}A + \iint\limits_{R_2} f(x,y)\mathrm{d}A  $$
+
+	Ahora, aplicando dicha propiedad al problema, se sigue por hipótesis:
+
+		$$ 0 = \iint\limits_{R} f(x,y)\mathrm{d}A
+			= \iint\limits_{R_1} f(x,y)\mathrm{d}A + \iint\limits_{R_2} f(x,y)\mathrm{d}A  $$
+
+	y así :
+
+		$$ 0 = \iint\limits_{R_1} f(x,y)\mathrm{d}A + \iint\limits_{R_2} f(x,y)\mathrm{d}A  $$
+
+	con lo que se sigue, conmutando la igualdad :
+
+		$$ \iint\limits_{R_1} f(x,y)\mathrm{d}A + \iint\limits_{R_2} f(x,y)\mathrm{d}A = 0$$
+
+	y de allí se obtiene :
+
+		$$ \iint\limits_{R_1} f(x,y)\mathrm{d}A = - \iint\limits_{R_2} f(x,y)\mathrm{d}A $$
+
+	Con lo cual, concluimos que el enunciado resulta ser \textbf{cierto}.\\
+
+	\textit{\textbf{28.}Use the result in Exercise 27 to evaluate the integral
+	\[\int^{ln 3}_{0} \int^1_-1 \sqrt{e^y + 1}\tan x dx dy\]
+	by inspection. Explain your reasoning}\ \\
+
+	\textit{\textbf{33}}\\
 
 	\textit{\textbf{39.} Suppose that the temperature in degrees Celsius at a
 	point $(x,y)$ on a flat metal plate is $ T(x,y)=10 - 8x^2 - 2y^2$, where x
