@@ -45,6 +45,70 @@
 
 \section{Marsden - Tromba | Sección 3.3}
 
+
+\textit{17. Find all local extrema for $f (x, y) = 8y^3 +12x^2 - 24xy$.}\\
+
+Procedemos a derivar parcialmente la función para $x, y$ así:
+
+	$$ \frac{\partial f}{\partial x} = 24x - 24y$$
+	$$ \frac{\partial f}{\partial y} = 24y^2 - 24x$$
+
+luego, para hallar los extremos locales, igualamos las parciales a cero, así:
+	$$ \frac{\partial f}{\partial x} = 24x - 24y = 0$$
+	$$ 24x = 24y$$
+	$$ x = y$$
+
+y también:
+	$$ \frac{\partial f}{\partial y} = 24y^2 - 24x = 0$$
+	$$ 24y^2 - 24x = 0$$
+	$$ 24y^2 - 24y = 0$$
+	$$ 24y(y - 1) = 0$$
+
+de allí se sigue:
+	$$ y = 0; \; y=1 $$
+
+con lo que, como $x = y$ y $ y = 0; \; y=1 $, se sigue que los puntos críticos
+son:
+	$$ (0,0), (1,1) $$
+
+luego, procedemos a derivar iteradamente para poder construir la matriz Hessiana
+y así determinar la naturaleza de los puntos críticos, así se sigue:
+	$$ \frac{\partial^2 f}{\partial x^2} = 24$$
+	$$ \frac{\partial^2 f}{\partial x \partial y } = -24
+	 = \frac{\partial^2 f}{\partial y \partial x } $$
+	$$ \frac{\partial^2 f}{\partial y^2} = 48y$$
+
+Así, contruyendo la matriz Hessiana y evaluando en los puntos críticos, se sigue:
+	$$H(x,y) = \begin{bmatrix}
+			\dfrac{\partial^2f}{\partial x^2} & & \dfrac{\partial^2f}{\partial x\partial y} \\
+			& & \\
+			\dfrac{\partial^2f}{\partial y\partial x}&  & \dfrac{\partial^2f}{\partial y^2} \\
+			\end{bmatrix} =
+			\begin{bmatrix}
+				24 & -24 \\
+				-24  & 48y \\
+			\end{bmatrix}
+			$$
+	$$det [H (0,0)] =
+			\begin{vmatrix}
+				24 & -24 \\
+				-24  & 0 \\
+			\end{vmatrix} = -(-24)(-24) = -576 < 0
+	$$
+	Como $f_{xx} > 0$ y $det(H) < 0$, entonces $(0,0)$ corresponde a un
+	punto de ensilladura (el cual no constituye un extremo local).\\
+
+	Análogamente:\\
+	$$det [H (1,1)] =
+			\begin{vmatrix}
+				24 & -24 \\
+				-24  & 48 \\
+			\end{vmatrix} = (24)(48) -(-24)(-24) = 1152 -576 = 576 > 0
+	$$
+	Como $f_{xx} > 0$ y $det(H) > 0$, entonces $(1,1)$
+	corresponde a un mínimo local, siendo este un punto extremo.\\
+
+
 \textit{18. Sea $f(x,y,z) = x^2 + y^2 + z^2 + kyz$}
 \begin{itemize}
 	\item[a] Comprobar que $(0,0,0)$ es punto crítico para $f$.
@@ -61,6 +125,67 @@
 	\item[b] Cómo $k$ es una constante y el punto crítico de la función es cuándo $x = y = z = 0$, entonces $k \in (-\infty, \infty)$ porque por propiedades de campo, sabemos que $kyz = k(0) = 0$.\\
 	Por lo tanto, $k$ puede tomar cualquier valor.\\
 \end{itemize}
+
+\textit{23. An examination of the function}
+	$$f:\mathbb{R}^2 \mapsto \mathbb{R}, (x, y) \mapsto (y -3x^2)(y -x^2)$$
+	\textit{will give an idea of the difficulty of finding conditions that
+			guarantee that a critical point is a relative extremum when Theorem
+			6 fails. Show that}\\
+
+	\textit{a) the origin is a critical point of $f$ ;}\\
+
+	Procedemos a derivar parcialmente la función, así, se sigue:
+	$$f(x,y) = y^2 -3x^2y -x^2y + 3x^4 = y^2 -4x^2y + 3x^4  $$
+	$$\frac{\partial f}{\partial x} = -8xy + 12x^3 $$
+	$$\frac{\partial f}{\partial y} = 2y - 4x^2 $$
+
+	luego, para ver que precisamente el origen es un punto crítico,
+	evaluamos las parciales en dicho punto, así:
+	$$\left. \frac{\partial f}{\partial x} \right|_{(0,0)}
+			= -8(0)(0) + 12(0)^3 = 0 $$
+	$$\left. \frac{\partial f}{\partial y} \right|_{(0,0)}
+			= 2(0) - 4(0)^2 = 0 $$
+
+	así, como todas las parciales son cero en el origen, se sigue que este es
+	un punto crítico.\\
+
+	\textit{b) $f$ has a relative minimum at $(0, 0)$ on every straight line
+			through $(0, 0)$; that is, if $g(t) = (at, bt)$, then
+			$f \circ g : \mathbb{R} \rightarrow \mathbb{R}$ has a relative
+			minimum at 0,for every choice of a and b;}\\
+
+		Consideremos ahora a la funcíón $f \circ g$:
+		$$ f \circ g = (bt)^2 - 4(at)^2(bt) + 3(at)^4$$
+		$$ = b^2t^2 - 4a^2bt^3 + 3a^4t^4$$
+
+		ahora, derivando la función compuesta, se tiene:
+		$$\frac{\partial f}{\partial t} = 2b^2t -12a^2bt^2 + 12a^4t^3
+										= 2t(b^2 - 6a^2bt + 6a^4t^2)$$
+
+		se sigue que $t = 0$ es un punto crítico correspondiente a $(x,y) = (0,0)$.
+		Ahora, derivando nuevamente la función, se tiene:
+
+		$$\frac{\partial^2 f}{\partial t^2} = 2b^2 -24a^2bt + 36a^4t^2 $$
+
+		ahora, evaluando la segunda derivada en el punto $t = 0$
+		$$\left. \frac{\partial^2 f}{\partial t^2} \right|_{0}
+			= 2b^2 -24a^2b(0) + 36a^4(0)^2 = 2b^2 $$
+
+		como
+			$$\left. \frac{\partial^2 f}{\partial t^2} \right|_{0} = 2b^2 > 0$$
+		se sigue que $t = 0$ es un mínimo local para
+		$\forall a$ si $b \neq 0$\\
+
+		Ahora, si $b = 0$, se cumple que
+			$$f \circ g (t) = 3(at)^4$$
+		así que $t = 0$ resulta ser un mínimo local para cualquier elección de
+		$a$ y $b$.\\
+
+	\textit{(c) the origin is not a relative minimum of $f$ .}\\
+	\newline
+
+	\textit{\textbf{$27.$}Suppose $f: \mathbb{R}^3 \mapsto \mathbb{R}$ is $C^2$, and that $x_{0}$ is a critical point for $f$. Suppose $Hf (x_{0})(h) = h_{1}^2 + h_{2}^2 + h_{3}^2 + 4h_{2}h_{3}$ Does $f$ have a local maximum, minimum, or saddle a $x_{0}$?}\
+
 \textit 34. Sea $f(x,y) = 5ye^x - e^{5x} -y^5$
 \begin{itemize}
 	\item[a] Demuestre que  $f$ tiene un único punto crítico que también es máximo de $f$.
@@ -156,72 +281,80 @@
 
 \end{itemize}
 
-\textit{23. An examination of the function}
-	$$f:\mathbb{R}^2 \mapsto \mathbb{R}, (x, y) \mapsto (y -3x^2)(y -x^2)$$
-	\textit{will give an idea of the difficulty of finding conditions that
-			guarantee that a critical point is a relative extremum when Theorem
-			6 fails. Show that}\\
 
-	\textit{a) the origin is a critical point of $f$ ;}\\
+\textit{37. Determine the nature of the critical points of
+			$f (x, y) = x^3 + y^2 - 6xy + 6x + 3y$.}\\
 
-	Procedemos a derivar parcialmente la función, así, se sigue:
-	$$f(x,y) = y^2 -3x^2y -x^2y + 3x^4 = y^2 -4x^2y + 3x^4  $$
-	$$\frac{\partial f}{\partial x} = -8xy + 12x^3 $$
-	$$\frac{\partial f}{\partial y} = 2y - 4x^2 $$
+			Procedemos a derivar parcialmente la función para $x, y$ así:
 
-	luego, para ver que precisamente el origen es un punto crítico,
-	evaluamos las parciales en dicho punto, así:
-	$$\left. \frac{\partial f}{\partial x} \right|_{(0,0)}
-			= -8(0)(0) + 12(0)^3 = 0 $$
-	$$\left. \frac{\partial f}{\partial y} \right|_{(0,0)}
-			= 2(0) - 4(0)^2 = 0 $$
+				$$ \frac{\partial f}{\partial x} = 3x^2 - 6y + 6$$
+				$$ \frac{\partial f}{\partial y} = 2y -6x + 3$$
 
-	así, como todas las parciales son cero en el origen, se sigue que este es
-	un punto crítico.\\
+			luego, para hallar los extremos locales, igualamos las parciales a cero, así:
+				$$ \frac{\partial f}{\partial x} = 3x^2 - 6y + 6 = 0$$
+				$$ 3x^2 - 6y + 6 = 0$$
+				$$ 2y -6x + 3 = 0$$
 
-	\textit{b) $f$ has a relative minimum at $(0, 0)$ on every straight line
-			through $(0, 0)$; that is, if $g(t) = (at, bt)$, then
-			$f \circ g : \mathbb{R} \rightarrow \mathbb{R}$ has a relative
-			minimum at 0,for every choice of a and b;}\\
+			de la segunda ecuación, podemos obtener:
+				$$  2y -6x + 3 = 0 $$
+				$$  2y = 6x - 3 $$
+				$$  y = \frac{6x - 3}{2} $$
 
-		Consideremos ahora a la funcíón $f \circ g$:
-		$$ f \circ g = (bt)^2 - 4(at)^2(bt) + 3(at)^4$$
-		$$ = b^2t^2 - 4a^2bt^3 + 3a^4t^4$$
+			y así, sustituyendo en la primera ecuación:
+				$$ 3x^2 - 6y + 6 = 0 $$
+				$$ 3x^2 - 6\Big(\frac{6x - 3}{2}\Big) + 6 = 0 $$
+				$$ 3x^2 - 18x + 9 + 6 = 0 $$
+				$$ 3x^2 - 18x + 15 = 0 $$
+				$$ x^2 - 6x + 5 = 0 $$
+				$$ (x-1)(x-5) = 0 $$
 
-		ahora, derivando la función compuesta, se tiene:
-		$$\frac{\partial f}{\partial t} = 2b^2t -12a^2bt^2 + 12a^4t^3
-										= 2t(b^2 - 6a^2bt + 6a^4t^2)$$
+			de allí obtenemos:
 
-		se sigue que $t = 0$ es un punto crítico correspondiente a $(x,y) = (0,0)$.
-		Ahora, derivando nuevamente la función, se tiene:
+				$$ x = 1 \; x = 5$$
 
-		$$\frac{\partial^2 f}{\partial t^2} = 2b^2 -24a^2bt + 36a^4t^2 $$
+			y haciendo uso se la ecuación $ y = \frac{6x + 3}{2} $, se sigue:
+				$$ y = \frac{6(1) - 3}{2} = \frac{3}{2} \; y = \frac{6(5) - 3}{2} = \frac{27}{2} $$
 
-		ahora, evaluando la segunda derivada en el punto $t = 0$
-		$$\left. \frac{\partial^2 f}{\partial t^2} \right|_{0}
-			= 2b^2 -24a^2b(0) + 36a^4(0)^2 = 2b^2 $$
+			se sigue que los puntos críticos son:
+				$$ \Big( 1, \frac{3}{2} \Big), \Big( 1, \frac{27}{2} \Big)  $$
 
-		como
-			$$\left. \frac{\partial^2 f}{\partial t^2} \right|_{0} = 2b^2 > 0$$
-		se sigue que $t = 0$ es un mínimo local para
-		$\forall a$ si $b \neq 0$\\
+			luego, procedemos a derivar iteradamente para poder construir la matriz Hessiana
+			y así determinar la naturaleza de los puntos críticos, así se sigue:
+				$$ \frac{\partial^2 f}{\partial x^2} = 6x $$
+				$$ \frac{\partial^2 f}{\partial x \partial y } = -6
+				 = \frac{\partial^2 f}{\partial y \partial x } $$
+				$$ \frac{\partial^2 f}{\partial y^2} = 2$$
 
-		Ahora, si $b = 0$, se cumple que
-			$$f \circ g (t) = 3(at)^4$$
-		así que $t = 0$ resulta ser un mínimo local para cualquier elección de
-		$a$ y $b$.\\
+			Así, contruyendo la matriz Hessiana y evaluando en los puntos críticos, se sigue:
+				$$H(x,y) = \begin{bmatrix}
+						\dfrac{\partial^2f}{\partial x^2} & & \dfrac{\partial^2f}{\partial x\partial y} \\
+						& & \\
+						\dfrac{\partial^2f}{\partial y\partial x}&  & \dfrac{\partial^2f}{\partial y^2} \\
+						\end{bmatrix} =
+						\begin{bmatrix}
+							6x & -6 \\
+							-6  & 2 \\
+						\end{bmatrix}
+						$$
+				$$det \Big[H \Big(1, \frac{3}{2}\Big)\Big] =
+						\begin{vmatrix}
+							6 & -6 \\
+							-6  & 2 \\
+						\end{vmatrix} = 12 - 36 = - 24 < 0
+				$$
+				Como $f_{xx} > 0$ y $det(H) < 0$, entonces $\Big(1, \frac{3}{2}\Big)$ corresponde a un
+				punto de ensilladura.\\
 
-	\textit{(c) the origin is not a relative minimum of $f$ .}\\
-	\newline
+				Análogamente:\\
+				$$det \Big[H \Big(5, \frac{27}{2}\Big)\Big] =
+						\begin{vmatrix}
+							30 & -6 \\
+							-6  & 2 \\
+						\end{vmatrix} = 60 - 36 = 24 > 0
+				$$
+				Como $f_{xx} > 0$ y $det(H) > 0$, entonces $\Big(5, \frac{27}{2}\Big)$
+				corresponde a un mínimo local.\\
 
-	\textit{\textbf{$27.$}Suppose $f: \mathbb{R}^3 \mapsto \mathbb{R}$ is $C^2$, and that $x_{0}$ is a critical point for $f$. Suppose $Hf (x_{0})(h) = h_{1}^2 + h_{2}^2 + h_{3}^2 + 4h_{2}h_{3}$ Does $f$ have a local maximum, minimum, or saddle a $x_{0}$?}\
-\textit{\textbf{51.}
-	\begin{itemize}
-		\item[(a)] Let f be a $C^1$ function on the real line $\mathbb{R}$. Suppose that f has exactly one critical point $x_{0}$ that is a strict local minimum for $f$ . Show that $x_{0}4$ is also an absolute minimum for $f$; that is, that $f(x) \geq f(x_{0})$ for all $x$.
-		\item[(b)] The next example shows that the conclusion of part (a) does not hold for functions of more tha one variable. Let $f: \mathbb{R}^2 \mapsto \mathbb{R}$ be defined by
-		\[f(x,y) = -y^4-e^{-x^2}+2y^2 \sqrt{e^x + e^{-x^2}}\]
-	\end{itemize}
-}
 
 
 	\textit{41. Find the absolute maximum and minimum values for
@@ -337,6 +470,15 @@
 			$$(\frac{\pi}{2}, 0), (\frac{\pi}{2}, 2\pi)$$
 		y mínimo absoluto en
 			$$(\frac{3\pi}{2}, \pi)$$
+
+	\textit{\textbf{51.}
+		\begin{itemize}
+			\item[(a)] Let f be a $C^1$ function on the real line $\mathbb{R}$. Suppose that f has exactly one critical point $x_{0}$ that is a strict local minimum for $f$ . Show that $x_{0}4$ is also an absolute minimum for $f$; that is, that $f(x) \geq f(x_{0})$ for all $x$.
+			\item[(b)] The next example shows that the conclusion of part (a) does not hold for functions of more tha one variable. Let $f: \mathbb{R}^2 \mapsto \mathbb{R}$ be defined by
+			\[f(x,y) = -y^4-e^{-x^2}+2y^2 \sqrt{e^x + e^{-x^2}}\]
+		\end{itemize}
+	}
+
 
 	\section{Marsden - Tromba | Sección 3.4}
 	\textit{\textbf{26.}An irrigation canal in Arizona has concrete sides and bottom with trapezoidal cross section of area
@@ -638,5 +780,5 @@ N[Integrate[x Cos[x y], {x, 1, 2}, {y, Pi/2, Pi}]] y nos arroja :
 	luego, sustituyendo en la fórmula para obtener la temperatura promedio, se
 	tiene:
 		$$ \frac{1}{A}  \iint\limits_{R} T(x,y)\mathrm{d}A  = \frac{1}{2} (\frac{28}{3}) $$
-		$$ = \frac{28}{6} = \frac{14}{6} $$
+		$$ = \frac{28}{6} = \frac{14}{3} $$
 \end{document}
