@@ -383,6 +383,73 @@ N[Integrate[x Cos[x y], {x, 1, 2}, {y, Pi/2, Pi}]] y nos arroja :
 	Take $(x^{*}_{k}, y^{*}_{k})$ to be the center of the $k-th$ rectangle, and approximate
 	the double integral of f over R by the resulting Riemann sum.}\\
 
+	Se tiene, que como $(x^{*}_{k}, y^{*}_{k})$ corresponden a los puntos medios
+	de cada uno de los $k$ rectángulos, es necesario calcular el valor de cada
+	uno de los puntos bajo la función $f$, así, como el rectángulo R está
+	comprendido entre
+
+		$$ 0 \leq x \leq 2, 0 \leq y \leq 2  $$
+
+	y dicho rectángulo se divide en 16 rectángulos de igual tamaño, se sigue que
+	los puntos medios de todos los rectángulos corresponden a los puntos:
+
+		$$ (\frac{1}{4}, \frac{7}{4}), (\frac{3}{4}, \frac{7}{4}),
+			(\frac{5}{4}, \frac{7}{4}), (\frac{7}{4}, \frac{7}{4}) $$
+		$$ (\frac{1}{4}, \frac{5}{4}), (\frac{3}{4}, \frac{5}{4}),
+			(\frac{5}{4}, \frac{5}{4}), (\frac{7}{4}, \frac{5}{4}) $$
+		$$ (\frac{1}{4}, \frac{3}{4}), (\frac{3}{4}, \frac{3}{4}),
+			(\frac{5}{4}, \frac{3}{4}), (\frac{7}{4}, \frac{3}{4}) $$
+		$$ (\frac{1}{4}, \frac{1}{4}), (\frac{3}{4}, \frac{1}{4}),
+			(\frac{5}{4}, \frac{1}{4}), (\frac{7}{4}, \frac{1}{4}) $$
+
+	así, evaluando los puntos bajo la función, se obtiene:
+
+	$$ f(\frac{1}{4}, \frac{7}{4}) =  - \frac{13}{4}, \quad f(\frac{3}{4}, \frac{7}{4}) =  - \frac{11}{4} , \quad
+	   f(\frac{5}{4}, \frac{7}{4}) =  - \frac{9}{4} , \quad f(\frac{7}{4}, \frac{7}{4}) = - \frac{7}{4} $$
+
+	$$ f(\frac{1}{4}, \frac{5}{4}) =  - \frac{9}{4}, \quad f(\frac{3}{4}, \frac{5}{4}) =  - \frac{7}{4} , \quad
+	   f(\frac{5}{4}, \frac{5}{4}) =  - \frac{5}{4} , \quad f(\frac{7}{4}, \frac{5}{4}) = - \frac{3}{4} $$
+
+	$$ f(\frac{1}{4}, \frac{3}{4}) =  - \frac{5}{4}, \quad f(\frac{3}{4}, \frac{3}{4}) =  - \frac{3}{4} , \quad
+	   f(\frac{5}{4}, \frac{3}{4}) =  - \frac{1}{4} , \quad f(\frac{7}{4}, \frac{3}{4}) = \frac{1}{4} $$
+
+	$$ f(\frac{1}{4}, \frac{1}{4}) =  - \frac{1}{4}, \quad f(\frac{3}{4}, \frac{1}{4}) = \frac{1}{4} , \quad
+	   f(\frac{5}{4}, \frac{1}{4}) =  \frac{3}{4} , \quad f(\frac{7}{4}, \frac{1}{4}) = \frac{5}{4} $$
+
+	luego, la suma de Riemann resultante está dada por:
+
+	$$ \sum_{k=1}^{16} f(x^{*}_{k}, y^{*}_{k}) \Delta A_{k} = - \frac{1}{4}(1) +
+	  	\frac{1}{4}(1) + \frac{3}{4}(1) + \frac{5}{4}(1) + (- \frac{5}{4})(1) +
+		(- \frac{3}{4})(1) + (- \frac{1}{4})(1) + \frac{1}{4}(1)  $$
+	$$ + (- \frac{9}{4})(1) + (- \frac{7}{4})(1) + (- \frac{5}{4})(1) + (- \frac{3}{4})(1)
+	   + (- \frac{13}{4})(1) + (- \frac{11}{4})(1) + (- \frac{9}{4})(1) + (- \frac{7}{4})(1) $$
+	$$  = - \frac{1}{4} + \frac{1}{4} + \frac{3}{4} + \frac{5}{4} + - \frac{5}{4}
+		- \frac{3}{4} - \frac{1}{4} + \frac{1}{4}
+	    - \frac{9}{4} - \frac{7}{4} - \frac{5}{4} - \frac{3}{4}
+	    - \frac{13}{4} - \frac{11}{4} - \frac{9}{4} - \frac{7}{4} $$
+
+	$$  = - \frac{9}{4} - \frac{7}{4} - \frac{5}{4} - \frac{3}{4}
+	      - \frac{13}{4} - \frac{11}{4} - \frac{9}{4} - \frac{7}{4} $$
+	$$ = - \frac{64}{4} = -16 $$
+
+	\textit{ (b) Compare the result in part (a) to the exact value of the integral. }\\
+
+		Ahora, calculando la integral doble para la región delimitada por
+		$$ 0 \leq x \leq 2, 0 \leq y \leq 2  $$
+
+		para la función $ f(x,y) = x - 2y $ se tiene:
+
+		$$ \iint\limits_{R} f(x,y)\mathrm{d}A = \int_{0}^{2} \int_{0}^{2} x - 2y \; dx dy  $$
+		$$  = \int_{0}^{2} [ \frac{x^2}{2} -2yx] \Big|_0^2 dy $$
+		$$  = \int_{0}^{2} \frac{4}{2} -2y(2) \; dy $$
+		$$  = \int_{0}^{2} 2 - 4y \; dy $$
+		$$  = [ 2y - \frac{4y^2}{2}] \Big|_0^2 $$
+		$$  = [ 2y - 2y^2 ] \Big|_0^2 $$
+		$$  = 4 - 8  = - 4 $$
+
+		Así, la diferencia ente el resultado en la parte (a) y la parte (b) es de
+		$12$ \\
+		
 	\textit{\textbf{23 - 26 True - False.} Determine whether the statement is
 	true or false. Explain your answer.\\}
 
