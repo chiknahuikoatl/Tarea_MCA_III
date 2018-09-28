@@ -1,4 +1,4 @@
-*.log
 *.aux
-*.synctex.gz
+*.log
+*.nb
 *.tex.bak
