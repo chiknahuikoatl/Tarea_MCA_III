@@ -1,0 +1,43 @@
+In[239]:= (*Anton-Bivens-Davis, sección 14.2, ejercicio 28*)
+(*a)*)
+	
+
+(*Anton-Bivens, seccion 14.2, ejercicio 57*)
+(*a)*)
+	f[x_,y_]:=x Sin[Pi*y^3]
+	g[y_]:=Integrate[f[x,y],{x,0, 4}]
+	h[x_] :=Integrate[f[x,y],{y,Sqrt[x],2}]
+	g[y]
+	h[x]
+	Integrate[g[y],{y,Sqrt[x],2}]
+	Integrate[h[x],{x,0,4}]
+	Integrate[f[x,y],{x,0,4}, {y,Sqrt[x],2} ]
+	(*Plot3D[f[x,y],{x,-3,3},{y,-3,3},ColorFunction->"Rainbow",Mesh->None]*)
+(*b)*)
+	(*f[x_,y_]:=Sec[Cos[x]]^2
+	g[y_]:=Integrate[f[x,y],{x,0, 1}]
+	h[x_] :=Integrate[f[x,y],{y,ArcSin[y],Pi/2}]
+	g[y]
+	h[x]
+	Integrate[g[y],{y,Sqrt[x],2}]
+	Integrate[h[x],{x,0,1}]
+	Integrate[f[x,y],{y,Sin[y]^-1,Pi/2}, {x,0,1}]*)
+	(*Plot3D[f[x,y],{x,-3,3},{y,-3,3},ColorFunction->"Rainbow",Mesh->None]*)
+	
+	H[y_]:=3+Sqrtr[16-y^2]-Sqrt[25-y^2] 
+	Integrate[H[y], {y, -4, 4}]
+	
+
+During evaluation of In[26]:= SetDelayed::write: Tag In in In[239] is Protected.
+Out[26]= $Failed
+Out[29]= 
+SubsuperscriptBox[∫, 0, 4]
+SuperscriptBox[Sec[Cos[x]], 2] x
+Out[30]= (2-Sqrt[x]) Sec[Cos[x]]^2
+Out[31]= (2-Sqrt[x]) 
+SubsuperscriptBox[∫, 0, 4]
+SuperscriptBox[Sec[Cos[x]], 2] x
+Out[32]= 
+SubsuperscriptBox[∫, 0, 4](2 - 
+SqrtBox[x])\ 
+SuperscriptBox[Sec[Cos[x]], 2] x
