@@ -1,4 +1,4 @@
-This is LuaTeX, Version 0.95.0 (TeX Live 2016/Debian)  (format=lualatex 2018.5.10)  1 OCT 2018 01:25
+This is LuaTeX, Version 0.95.0 (TeX Live 2016/Debian)  (format=lualatex 2018.5.10)  1 OCT 2018 09:11
  restricted system commands enabled.
 **tarea2.tex
 (./tarea2.tex
@@ -34,7 +34,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.097 seconds
+luaotfload | main : initialization completed in 0.091 seconds
 Babel <3.9r> and hyphenation patterns for 1 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
@@ -507,21 +507,22 @@ l/lmroman8-regular.luc)(compiling luc: /var/lib/texmf/luatex-cache/generic/fonts
 /otl/lmroman6-regular.luc)(compiling luc: /home/chicnahuicoatl/.texlive2016/texm
 f-var/luatex-cache/generic/fonts/otl/lmroman6-regular.luc)(save: /var/lib/texmf/
 luatex-cache/generic/fonts/otl/lmroman6-regular.lua)(save: /var/lib/texmf/luatex
--cache/generic/fonts/otl/lmroman6-regular.luc) [4] [5](compiling luc: /var/lib/t
-exmf/luatex-cache/generic/fonts/otl/lmroman10-italic.luc)(compiling luc: /home/c
-hicnahuicoatl/.texlive2016/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-it
-alic.luc)(save: /var/lib/texmf/luatex-cache/generic/fonts/otl/lmroman10-italic.l
-ua)(save: /var/lib/texmf/luatex-cache/generic/fonts/otl/lmroman10-italic.luc)
-Underfull \hbox (badness 10000) in paragraph at lines 212--214
+-cache/generic/fonts/otl/lmroman6-regular.luc) [4] [5] [6](compiling luc: /var/l
+ib/texmf/luatex-cache/generic/fonts/otl/lmroman10-italic.luc)(compiling luc: /ho
+me/chicnahuicoatl/.texlive2016/texmf-var/luatex-cache/generic/fonts/otl/lmroman1
+0-italic.luc)(save: /var/lib/texmf/luatex-cache/generic/fonts/otl/lmroman10-ital
+ic.lua)(save: /var/lib/texmf/luatex-cache/generic/fonts/otl/lmroman10-italic.luc
+)
+Underfull \hbox (badness 10000) in paragraph at lines 228--230
 
  []
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 229--231
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 245--247
 
  []
 
-[7] (./tarea2.aux
+[8] (./tarea2.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ))
@@ -529,10 +530,10 @@ LaTeX Info: Redefining \% on input line 6.
 Here is how much of LuaTeX's memory you used:
  4071 strings out of 494577
  100000,154059 words of node,token memory allocated
- 7677 words of node memory still in use:
-   5 hlist, 2 vlist, 2 rule, 948 glue, 1 kern, 170 attribute, 42 glue_spec, 170 
-attribute_list, 1 write nodes
-   avail lists: 2:684,3:121,4:17,5:273,6:1381,7:629,8:114,9:1169,10:10,11:149
+ 8337 words of node memory still in use:
+   5 hlist, 2 vlist, 2 rule, 1022 glue, 1 kern, 6 sub_mlist, 201 attribute, 42 g
+lue_spec, 201 attribute_list, 1 write nodes
+   avail lists: 2:816,3:115,4:17,5:273,6:1390,7:620,8:114,9:1169,10:10,11:149
  7903 multiletter control sequences out of 65536+600000
  39 fonts using 2627391 bytes
  37i,19n,30p,257b,256s stack positions out of 5000i,500n,10000p,200000b,100000s
@@ -550,10 +551,10 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist
 pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmsy8.pfb>
-Output written on tarea2.pdf (7 pages, 145160 bytes).
+Output written on tarea2.pdf (8 pages, 146680 bytes).
 
-PDF statistics: 100 PDF objects out of 1000 (max. 8388607)
- 65 compressed objects within 1 object stream
+PDF statistics: 103 PDF objects out of 1000 (max. 8388607)
+ 67 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

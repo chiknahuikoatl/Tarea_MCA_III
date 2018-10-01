@@ -193,9 +193,25 @@ Entonces,
 \end{equation}
 Pero cómo la masa siempre es positiva, entonces
 \[\int_WdV=\Big|-\tfrac{1}{36}\Big|=\tfrac{1}{36}\]
-
-Evaluando en el CAS tenemos que esto se cumple.
-$x=1/4,y=1/8,z=1/12$
+Entonces, $\frac{1}{m}=\frac{1}{\frac{1}{36}}=36$
+De esto, tenemos las siguientes tres ecuaciones con sus resultados correspondientes
+evaluados en un CAS:
+\begin{equation}
+	\begin{split}
+		\bar{x}&=36\int_WdV\\
+			   &=\int_0^1\tsint{\frac{1-x}{2}}\tsint{\frac{1-x-2y}{3}}xdzdydx\\
+			   &=36\frac{1}{144}\\
+			   &=\frac{1}{4}\\
+		\bar{y}&=36\int_WdV\\
+			   &=\int_0^1\tsint{\frac{1-x}{2}}\tsint{\frac{1-x-2y}{3}}ydzdydx\\
+			   &=36\frac{1}{288}\\
+			   &=\frac{1}{8}\\
+		\bar{z}&=36\int_WdV\\
+			   &=\int_0^1\tsint{\frac{1-x}{2}}\tsint{\frac{1-x-2y}{3}}zdzdydx\\
+			   &=36\frac{1}{432}\\
+			   &=\frac{1}{12}\\
+	\end{split}
+\end{equation}
 
 
 Problems 67–69 concern a rotating solid body and its \textit{moment of inertia}
