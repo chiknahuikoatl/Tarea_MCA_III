@@ -1,0 +1,292 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9767,        282]
+NotebookOptionsPosition[      9478,        269]
+NotebookOutlinePosition[      9813,        284]
+CellTagsIndexPosition[      9770,        281]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Anton", "-", "Bivens", "-", "Davis"}], ",", " ", 
+    RowBox[{"secci\[OAcute]n", " ", "14.2"}], ",", " ", 
+    RowBox[{"ejercicio", " ", "28"}]}], "*)"}], "\n", 
+  RowBox[{"(*", 
+   RowBox[{"a", ")"}], "*)"}], "\n", "\t", "\n", "\n", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Anton", "-", "Bivens"}], ",", " ", 
+    RowBox[{"seccion", " ", "14.2"}], ",", " ", 
+    RowBox[{"ejercicio", " ", "57"}]}], "*)"}], "\n", 
+  RowBox[{"(*", 
+   RowBox[{"a", ")"}], "*)"}], "\n", "\t", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+    RowBox[{
+     RowBox[{"x", " ", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"Pi", "*", 
+        RowBox[{"y", "^", "3"}]}], "]"}], "\n", "\t", 
+      RowBox[{"g", "[", "y_", "]"}]}], ":=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Integrate", "[", 
+        RowBox[{
+         RowBox[{"f", "[", 
+          RowBox[{"x", ",", "y"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "0", ",", " ", "4"}], "}"}]}], "]"}], "\n", "\t", 
+       
+       RowBox[{"h", "[", "x_", "]"}]}], " ", ":=", 
+      RowBox[{
+       RowBox[{"Integrate", "[", 
+        RowBox[{
+         RowBox[{"f", "[", 
+          RowBox[{"x", ",", "y"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"y", ",", 
+           RowBox[{"Sqrt", "[", "x", "]"}], ",", "2"}], "}"}]}], "]"}], "\n", 
+       "\t", 
+       RowBox[{"g", "[", "y", "]"}], "\n", "\t", 
+       RowBox[{"h", "[", "x", "]"}], "\n", "\t", 
+       RowBox[{"Integrate", "[", 
+        RowBox[{
+         RowBox[{"g", "[", "y", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"y", ",", 
+           RowBox[{"Sqrt", "[", "x", "]"}], ",", "2"}], "}"}]}], "]"}], "\n", 
+       "\t", 
+       RowBox[{"Integrate", "[", 
+        RowBox[{
+         RowBox[{"h", "[", "x", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "0", ",", "4"}], "}"}]}], "]"}], "\n", "\t", 
+       RowBox[{"Integrate", "[", 
+        RowBox[{
+         RowBox[{"f", "[", 
+          RowBox[{"x", ",", "y"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "0", ",", "4"}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"y", ",", 
+           RowBox[{"Sqrt", "[", "x", "]"}], ",", "2"}], "}"}]}], " ", 
+        "]"}]}]}]}]}], "*)"}], "\n", "\t", 
+  RowBox[{"(*", 
+   RowBox[{"Plot3D", "[", 
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"x", ",", "y"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", 
+       RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+     RowBox[{"ColorFunction", "->", "\"\<Rainbow\>\""}], ",", 
+     RowBox[{"Mesh", "->", "None"}]}], "]"}], "*)"}], "\n", 
+  RowBox[{"(*", 
+   RowBox[{"b", ")"}], "*)"}], "\n", "\t", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"Sec", "[", 
+        RowBox[{"Cos", "[", "x", "]"}], "]"}], "^", "2"}], "\n", "\t", 
+      RowBox[{"g", "[", "y_", "]"}]}], ":=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Integrate", "[", 
+        RowBox[{
+         RowBox[{"f", "[", 
+          RowBox[{"x", ",", "y"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "0", ",", " ", "1"}], "}"}]}], "]"}], "\n", "\t", 
+       
+       RowBox[{"h", "[", "x_", "]"}]}], " ", ":=", 
+      RowBox[{
+       RowBox[{"Integrate", "[", 
+        RowBox[{
+         RowBox[{"f", "[", 
+          RowBox[{"x", ",", "y"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"y", ",", 
+           RowBox[{"ArcSin", "[", "y", "]"}], ",", 
+           RowBox[{"Pi", "/", "2"}]}], "}"}]}], "]"}], "\n", "\t", 
+       RowBox[{"g", "[", "y", "]"}], "\n", "\t", 
+       RowBox[{"h", "[", "x", "]"}], "\n", "\t", 
+       RowBox[{"Integrate", "[", 
+        RowBox[{
+         RowBox[{"g", "[", "y", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"y", ",", 
+           RowBox[{"Sqrt", "[", "x", "]"}], ",", "2"}], "}"}]}], "]"}], "\n", 
+       "\t", 
+       RowBox[{"Integrate", "[", 
+        RowBox[{
+         RowBox[{"h", "[", "x", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "0", ",", "1"}], "}"}]}], "]"}], "\n", "\t", 
+       RowBox[{"Integrate", "[", 
+        RowBox[{
+         RowBox[{"f", "[", 
+          RowBox[{"x", ",", "y"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"y", ",", 
+           RowBox[{
+            RowBox[{"Sin", "[", "y", "]"}], "^", 
+            RowBox[{"-", "1"}]}], ",", 
+           RowBox[{"Pi", "/", "2"}]}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "0", ",", "1"}], "}"}]}], "]"}]}]}]}]}], "*)"}], 
+  "\n", "\t", 
+  RowBox[{"(*", 
+   RowBox[{"Plot3D", "[", 
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"x", ",", "y"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", 
+       RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+     RowBox[{"ColorFunction", "->", "\"\<Rainbow\>\""}], ",", 
+     RowBox[{"Mesh", "->", "None"}]}], "]"}], "*)"}], "\n", "\n", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Hughes", "-", "Hallet"}], ",", " ", 
+    RowBox[{"secci\[OAcute]n", " ", "16.2"}], ",", " ", 
+    RowBox[{"ejercicio", " ", "62"}]}], "*)"}], "\t", "\n", "\t", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"H", "[", "y_", "]"}], ":=", 
+    RowBox[{"3", "+", 
+     RowBox[{"Sqrtr", "[", 
+      RowBox[{"16", "-", 
+       RowBox[{"y", "^", "2"}]}], "]"}], "-", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{"25", "-", 
+       RowBox[{"y", "^", "2"}]}], "]"}]}]}], " ", "\n", "\t", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"H", "[", "y", "]"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", " ", 
+       RowBox[{"-", "4"}], ",", " ", "4"}], "}"}]}], "]"}], "\n", "\t", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+     "Para", " ", "evaluar", " ", "la", " ", "expresi\[OAcute]n", " ", 
+      "resultante"}], ",", " ", 
+     RowBox[{
+      RowBox[{"introducir", " ", "la", " ", "siguiente", " ", 
+       RowBox[{"ecuaci\[OAcute]n", ":", "\n", "\t", 
+        RowBox[{"12", "+", 
+         RowBox[{"8", "\\", "pi"}], "-", 
+         RowBox[{
+          RowBox[{"25", "\\", 
+           RowBox[{"sin", "^", 
+            RowBox[{"{", 
+             RowBox[{"-", "1"}], "}"}]}], "\\", "left"}], 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"\\", "frac"}], 
+            RowBox[{"{", "4", "}"}], 
+            RowBox[{"{", "5", "}"}], "\\r", "ight"}], ")"}], " ", "en", " ", 
+          "el", "  ", "siguiente", " ", "graficador"}]}], ":", "\n", "\t", 
+        "https", ":"}]}], "//", 
+      RowBox[{
+       RowBox[{"www", ".", "desmos", ".", "com"}], "/", "calculator"}]}]}], 
+    " ", "*)"}], "\n", "\n", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"Hughes", "-", "Hallet"}], ",", " ", 
+     RowBox[{"secci\[OAcute]n", " ", "16.3"}], ",", " ", 
+     RowBox[{"ejercicio", " ", "66"}]}], "*)"}], "\t \t", "\n", "\t", 
+   RowBox[{
+    RowBox[{"I", "[", 
+     RowBox[{"x_", ",", "y_", ",", "z_"}], "]"}], ":=", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "-", "x", "-", 
+       RowBox[{"2", "y"}]}], ")"}], "/", "3"}]}], "\n", "\t", 
+   RowBox[{
+    RowBox[{"E", "[", 
+     RowBox[{"x_", ",", "y_", ",", "z_"}], "]"}], ":=", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "-", "x"}], ")"}], "/", "2"}]}], "\n", 
+   StyleBox["\t", "Input"], 
+   StyleBox[
+    RowBox[{"Integrate", "[", 
+     RowBox[{"x", ",", "  ", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", " ", "0", ",", " ", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"1", "-", "x", "-", 
+           RowBox[{"2", "y"}]}], ")"}], "/", "3"}]}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"y", ",", " ", "0", ",", " ", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"1", "-", "x"}], ")"}], "/", "2"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", " ", "0", ",", " ", "1"}], "}"}]}], "]"}], "Input"], 
+   
+   StyleBox["\[IndentingNewLine]", "Input"], "\t", "X"}]}]], "Input",
+ CellChangeTimes->{
+  3.747389962679881*^9, {3.7473900707657623`*^9, 3.7473900729078827`*^9}, {
+   3.747390104008465*^9, 3.747390182358934*^9}, {3.747390241981843*^9, 
+   3.74739028103129*^9}, {3.747390346004127*^9, 3.7473903516896687`*^9}, {
+   3.7473904039677877`*^9, 3.7473904305067797`*^9}, {3.747390540609853*^9, 
+   3.747390550035144*^9}, {3.747390580054384*^9, 3.747390631045443*^9}, {
+   3.747390675736577*^9, 3.747390794254199*^9}, {3.747390832338488*^9, 
+   3.747390954068005*^9}, {3.747390985328911*^9, 3.7473909853550653`*^9}, {
+   3.7473910308463097`*^9, 3.747391033679243*^9}, {3.747391098391735*^9, 
+   3.747391192586012*^9}, {3.747391227250581*^9, 
+   3.747391239127467*^9}},ExpressionUUID->"bc37c185-4b85-43c1-97e0-\
+130bc41b85e3"]
+},
+WindowSize->{808, 911},
+WindowMargins->{{556, Automatic}, {48, Automatic}},
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 8916, 247, 906, "Input",ExpressionUUID->"bc37c185-4b85-43c1-97e0-130bc41b85e3"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,77 +1,34 @@
-\documentclass[a4paper,12pt]{article}
-\usepackage[a4paper, portrait, margin=0.5in]{geometry}
-\usepackage[utf8]{inputenc}
+\documentclass[11pt]{report}
+
+\usepackage[left=2cm, right=2cm, top=2cm]{geometry}
 \usepackage[spanish]{babel}
-\selectlanguage{spanish}
+\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
-\usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{polynomial}
-\usepackage{makeidx}
 \usepackage{graphicx}
-\usepackage{lmodern}
 \graphicspath{ {images/} }
 
 \begin{document}
-\newcommand{\osf}[2]{\dfrac{#1^2}{#2^2}}
-\newcommand{\T}{\Big(2\pi\cdot\sqrt{\dfrac{l}{g}}\Big)}
-\newcommand{\alpa}{\dfrac{e^{x \beta -3}{2y\beta +5}}}
-\newcommand{\deriv}[2]{\dfrac{\delta #1}{\delta #2}}
-\newcommand{\sderiv}[3]{\dfrac{\delta ^2 #1}{\delta #2 \delta #3}}
-\newcommand{\ext}{e^{ax-bt}}
-\newcommand{\exy}{e^{((x-1)^2 + (y-3)^2}}
-\newcommand{\xo}{\vec{x_0}} %Devuelve un vector x_0
-\providecommand{\norm}[1]{\parallel #1\parallel}
 
-\begin{titlepage}
-	\centering
-	{\scshape\LARGE Universidad Autónoma de México \par}
-	\vspace{1cm}
-	{\scshape\Large Matemáticas para las Ciencias Aplicadas III\par}
-	\vspace{1.5cm}
-	{\huge\bfseries Tarea II\par}
-	\vspace{.5cm}
-	{\Large\itshape Alan Ernesto Arteaga Vázquez \par}
-    \vspace{.5cm}
-	{\Large\itshape Alma Rocío Sánchez Salgado \par}
-    \vspace{.5cm}
-	{\Large\itshape Jerónimo Almeida Rodríguez \par}
-	\vfill
-	 \includegraphics[width=0.5\textwidth]{../escudo_f-ciencias.png}
-	\vfill
+%Macros generales
+\newcommand{\BP}[1]{\bigg( #1 \bigg)} %Paréntesis demasiado grandes
+\newcommand{\Bp}[1]{\Big( #1 \Big)} %Paréntesis muy grandes
+\newcommand{\bp}[1]{\big( #1 \big)} %Paréntesis grandes pero no tanto
 
-% Bottom of the page
-	{\large Jueves 28 de Agosto del 2018 \par}
-\end{titlepage}
+%Macros específicos
+\newcommand{\tsint}[1]{\int_0^{#1}} %Integral para el ejercicio 37, lím. inf. 0.
 
-\newpage
+\begin{center}
+		\textsc{\huge Matemáticas para las \\Ciencias Aplicadas III \\ Tarea 2\\}
+		\textbf{Alan Arteaga, Alma Sánchez, Jerónimo Almeida}
+\end{center}
 
+\textbf{El "cuaderno" dónde se resuelven los problemas evaluados en un CAS se encuentran
+		en la siguiente liga: }
 
 \textbf{Anton-Bivens-Davis} \\
 
 \textbf{Sección 14.2} \\
-
-\textbf{15-18} Evaluate the double integral in two ways using iterated integrals:
-(a) viewing $R$ as a type I region, and (b) viewing $R$ as a type II region.
-
-\textbf{18.} \\
-
-$ {\displaystyle \iint \limits_R } \, y \, \, \text dA; \, R$ is the region in the first
-quadrant enclosed between the circle $x^2 + y^2 = 25$ and the line $x + y = 5$. \\
-
-\textbf{19-24.} Evaluate the double integral in two ways using iterated integrals: \\
-
-\textbf{22.} $ {\displaystyle \iint \limits_R } \, x \, \, \text dA; \, R$ is the region
-enclosed by $y = sin^{-1} x, x = \frac{1}{\sqrt{2}},$ and $y = 0$. \\
-
-\textbf{28.} \\
-
-(a) By hand or with the help of a graphing utility, make a sketch of the region
-$R$ enclosed between the curves $y = 4x^3 - x^4$ and $y = 3 - 4x + 4x^2$. \\
-
-(b) Find the intersections of the curves in part (a). \\
-
-(c) Find $ {\displaystyle \iint \limits_R } \, x \, \, \text dA $ \\
 
 \textbf{37-38} Use double integration to find the volume of the solid. \\
 
@@ -82,63 +39,105 @@ $R$ enclosed between the curves $y = 4x^3 - x^4$ and $y = 3 - 4x + 4x^2$. \\
 \centering
 \end{figure}
 
-\textbf{57.} Try to evaluate the integral with a CAS using the stated order of
-integration, and then by reversing the order of integration.\\
-
-(a) $ {\displaystyle \int \limits_0^4 \int \limits_{\sqrt{x}}^2 } \, \sin{\pi y^3} \, \, \text dx \text dy $ \\
-
-(b) $ {\displaystyle \int \limits_0^1 \int \limits_{sin^{-1}y}^{\frac{\pi}{2}} } \, \sec{\cos{x}}^2 \, \, \text dx \text dy $ \\
-
-\textbf{59.} Evaluate $ {\displaystyle \iint \limits_R } \, xy^2 \, \, \text dA $ over
-the region R shown in the accompanying figure. \\
-\begin{figure}[h]
-\includegraphics[scale=0.5]{img2.png}
-\centering
-\end{figure}
-
-\textbf{63.} Suppose that the temperature in degrees Celsius at a point $(x, y)$
-on a flat metal plate is $T(x, y) = 5xy + x^2 $, where $x$ and $y$ are in meters.
-Find the average temperature of the diamond-shaped portion of the plate for which
-$|2x + y| \leq 4$ and $|2x - y| \leq 4$. \\
+Tenemos que integrar
+\[\int_0^4 \int_0^{6-3x/2}\left( 3- \frac{3x}{4}- \frac{y}{2} \right) dy dx\]
+Comenzamos a integrar respecto a $y$, por lo que pasa como constantes $(3- \frac{3x}{4})$ multiplicado por $y$, entonces :
+\[\int_0^4 y \left( 3- \frac{3x}{4}\right)- \frac{y^2}{4} \vert_0^{6-3x/2} dx\]
+Evaluamos:
+\[\int_0^4 \left(6 - \frac{3x}{2} \right)\left( 3- \frac{3x}{4}\right)- \frac{\left(6 - \frac{3x}{2} \right)^2}{4} dx = 12\]
 
 \textbf{Sección 14.5} \\
-
-\textbf{12.} $ {\displaystyle \iiint \limits_G } \, \cos{\frac{z}{y}} \, \, \text dV $,
-where $G$ is the solid defined by the inequalities
-$\frac{\pi}{6} \leq y \leq \frac{\pi}{2}, y \leq x \leq \frac{\pi}{2}, 0 \leq z \leq xy$. \\
-
 
 \textbf{37.} Let $G$ be the tetrahedron in the first octant bounded by the
 coordinate planes and the plane \\
 
-\[ \frac{x}{a} + \frac{y}{b} + \frac{z}{c} = 1, (a > 0, b > 0, c > 0) \]
+\[ \tfrac{x}{a} + \tfrac{y}{b} + \tfrac{z}{c} = 1, (a > 0, b > 0, c > 0) \]
 
 (a) List six different iterated integrals that represent the volume of $G$. \\
+\begin{itemize}
+	\item[i] \[V_G(xyz)=\tsint{a}\tsint{(b(1-\tfrac{x}{a}))}\tsint{(c(1-\tfrac{x}{a}-\tfrac{y}{b}))}dzdydx\]
+	\item[ii] \[V_G(xzy)=\tsint{a}\tsint{(c(1-\tfrac{x}{a}))}\tsint{(b(1-\tfrac{x}{a}-\tfrac{z}{c}))}dydzdx\]
+	\item[iii] \[V_G(yxz)=\tsint{b}\tsint{(a(1-\tfrac{y}{b}))}\tsint{(c(1-\tfrac{x}{a}-\tfrac{y}{b}))}dzdxdy\]
+	\item[iv] \[V_G(yzx)=\tsint{b}\tsint{(c(1-\tfrac{y}{b}))}\tsint{(a(1-\tfrac{z}{c}-\tfrac{y}{b}))}dxdzdy\]
+	\item[v] \[V_G(zxy)=\tsint{c}\tsint{(a(1-\tfrac{z}{c}))}\tsint{(b(1-\tfrac{x}{a}-\tfrac{y}{b}))}dydxdz\]
+	\item[vi] \[V_G(zyx)=\tsint{c}\tsint{(b(1-\tfrac{z}{c}))}\tsint{(a(1-\tfrac{z}{c}-\tfrac{y}{b}))}dxdydz\]
+\end{itemize}
 
-(b) Evaluate any one of the six to show that the volume of $G$ is $\frac{1}{6} abc$. \\
-
-\textbf{38.} Use a triple integral to derive the formula for the volume of the ellipsoid
-
-\[ \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1 \]
+(b) Evaluate any one of the six to show that the volume of $G$ is $\tfrac{1}{6} abc$. \\
+\begin{equation}
+	\begin{split}
+		V_G(xyz)&=\tsint{c}\tsint{b(1-\tfrac{z}{c})}\tsint{a(1-\tfrac{z}{c}-\tfrac{y}{b})}dxdydz\\
+				&=\tsint{c}\tsint{b(1-\tfrac{z}{c})}x\Big|_0^{a(1-\tfrac{z}{c}-\tfrac{y}{b})}dydz\\
+				&=\tsint{c}\tsint{b(1-\tfrac{z}{c})}a(1-\tfrac{z}{c}-\tfrac{y}{b})dydz\\
+				&=a\tsint{c}\tsint{b(1-\tfrac{z}{c})}(1-\tfrac{z}{c}-\tfrac{y}{b})dydz\\
+				&=a\tsint{c}(y-\tfrac{yz}{c}-\tfrac{y^2}{2b})\Big|_0^{b(1-\tfrac{z}{c})}dz\\
+				&=a\tsint{c}\BP{\Bp{b(1-\tfrac{z}{c})}-\Bp{\tfrac{b^2(1-\tfrac{z}{c})^2}{2b}}-
+					\Bp{\tfrac{bz(1-\tfrac{z}{c})}{c}}}dz\\
+				&=ab\tsint{c}\BP{\Bp{1-\tfrac{z}{c}}-\Bp{\tfrac{b(1-\tfrac{z}{c})^2}{2}}-
+					\Bp{\tfrac{z(1-\tfrac{z}{c})}{c}}}dz\\
+				&=ab\tsint{c}\BP{\Bp{1-\tfrac{z}{c}}-\Bp{\tfrac{(1-\tfrac{2z}{c}+\tfrac{z^2}{c^2})}{2}}-
+					\Bp{\tfrac{(z-\tfrac{z^2}{c})}{c}}}dz\\
+				&=ab\tsint{c}\Bp{1-\tfrac{z}{c}-\tfrac{1}{2}+\tfrac{z}{c}+\tfrac{z^2}{2c^2}-
+					\tfrac{z}{c}+\tfrac{z^2}{c^2}}dz\\
+				&=ab\tsint{c}\Bp{1-\tfrac{z}{c}-\tfrac{1}{2}+\tfrac{z}{c}+\tfrac{z^2}{2c^2}-
+					\tfrac{z}{c}+\tfrac{z^2}{c^2}}dz\\
+				&=ab\tsint{c}\Bp{\tfrac{1}{2}+\tfrac{z^2}{2c^2}-\tfrac{z}{c}}dz\\
+				&=ab\Bp{\tfrac{z}{2}+\tfrac{z^3}{6c^2}-\tfrac{z^2}{2c}\Big|_0^c}\\
+				&=ab\Bp{\tfrac{c}{2}+\tfrac{c^3}{6c^2}-\tfrac{c^2}{2c}}\\
+				&=ab\bp{\tfrac{c}{2}+\tfrac{c}{6}-\tfrac{c}{2}}\\
+				&=abc\bp{\tfrac{1}{2}+\tfrac{1}{6}-\tfrac{1}{2}}\\
+				&=\frac{1}{6}abc\\
+	\end{split}
+\end{equation}
 
 \textbf{Hughes-Hallet} \\
 
-\textbf{Sección 16.2}
-
-\textbf{35.} \\
-
-\[ \int \limits_0^1 \, \int \limits_{\sqrt{y}}^1 \sqrt{2 + x^3} \, \text dx \, \text dy \]
-
-\textbf{37.} \\
-
-\[ \int \limits_0^1 \, \int \limits_{e^y}^e \frac{x}{\ln{x}} \, \text dx \, \text dy \]
-
-\textbf{60.} Show that for a right triangle the average distance from any point
-in the triangle to one of the legs is one-third the length of the other leg.
-(The legs of a right triangle are the two sides that are not the hypotenuse.) \\
-
+\textbf{Sección 16.2}\\
 \textbf{62.} Find the area of the crescent-moon shape with circular arcs as edges
 and the dimensions shown in Figure 16.22. \\
+
+Cómo la luna está compuesta de dos secciones circulares, sabemos que cada curva que contiene
+a la región está conformada por un círculo de radio fijo.\\
+Sean $E$ el círculo exterior e $I$ el círculo interior de la media luna.\\
+Sea $r_E$ el radio del círculo exterior. Sabemos que este radio es de tamaño $r_E=4$ porque es cuándo
+sabemos que la distancia entre el punto más alto, el más bajo y el extremo del lado dado son
+consistentes. \\
+Sea $r_I$ el radio del círculo interior $I$. Si "trazamos" una línea del punto más alto de la luna
+al centro del círculo interior podemos formar un triángulo de altura $r_E=4$, hipotenusa de
+tamaño $r_I$ y longitud horizontal de tamaño $r_I-2$ (Obtenemos esta medida trazando una línea del
+centro de $I$ al centro del círculo $E$ que está a distancia $2$ del borde de $I$).\\
+De esta manera, por el teorema de Pitágoras, tenemos que
+\begin{equation}
+	\begin{split}
+		r_I^2	    &=4^2+(r_I)^2\\
+			 	    &=16+r_I^2-4r_I+4\\
+			 	    &=20+r_I^2-4r_I\\
+		r_I^2-r_I^2 &=20-4r_I\\
+		0 			&=20-4r_I\\
+		4r_I		&=20\\
+		r_I			&=5
+	\end{split}
+\end{equation}
+Luego, si suponemos que el centro de $I$ está en el origen, tenemos porque
+$$I={(x,y)|x^2+y^2=25}$$
+y que
+$$E={(x,y)|(x-(r_I-2))^2+ y^2=(x-3)^2+y^2=16}$$
+De esta manera tenemo que el área de la luna se encuentra entre las curvas
+$$x^2=25-y^2 \Rightarrow x=\sqrt{25-y^2}$$
+y
+$$(x-3)^2=16-y^2\Rightarrow x-3=\sqrt{16-y^2}\Rightarrow x=3+\sqrt{16-y^2}$$
+Así, tenemos que el área de la media luna es:
+\begin{equation}
+	\begin{split}
+		A&=\int_{-4}^4\int_{\sqrt{25-y^2}}^{3+\sqrt{16-y^2}}dxdy\\
+		 &=\int_{-4}^4x\Big|_{\sqrt{25-y^2}}^{3+\sqrt{16-y^2}}dy\\
+		 &=\int_{-4}^4\bp{3+\sqrt{16-y^2}-\sqrt{25-y^2}}dy\\
+		 &=12+8\pi-25sin^{-1}(\tfrac{4}{5})\\
+		 &=13.9504 \\
+	\end{split}
+\end{equation}
+La penúltima ecuación se obtuvo de evaluar la antepenúltima ecuación en el software
+de Mathematica y la última ecuación de evaluar este último resultado en la graficadora Desmos.
 
 \textbf{Sección 16.3} \\
 
@@ -147,74 +146,106 @@ Let $S$ be the solid sphere $x^2 + y^2 + z^2 \leq 1$, and $T$ be the top half of
 this sphere (with $z \geq 0$), and $B$ be the bottom half (with $z \leq 0$), and $R$
 be the right half of the sphere (with $x \geq 0$), and $L$ be the left half
 (with $x \leq 0$). \\
+\begin{itemize}
+	\item[\textbf{14.}]$ \int _T e^z \, \text dV$\\
+	Como $e^z$ es positiva en $T$, entonces la integral es positiva.
 
-\textbf{14.} \\
+	\item[\textbf{15.}]$ \int _B e^z \, \text dV $\\
+	Como $e^z$ es positiva en B, la integral es posiitva
 
-\[ \int _T e^z \, \text dV \]
+	\item[\textbf{16.}]$\int _S \sin{z} \, \text dV$\\
+	Tenemos que $\sin z$ es positiva en T y  es negativa con el mismo valor absoluto en la
+	mitad inferior de $R$ por lo que la integral de $\sin z$ es cero.
 
-\textbf{15.} \\
+	\item[\textbf{17.}]$ \int _T \sin{z} \, \text dV$\\
+	Tenemos que el $sin z $ es positiva en $T$ por lo que la integral es positiva
 
-\[ \int _B e^z \, \text dV \]
-
-\textbf{16.} \\
-
-\[ \int _S \sin{z} \, \text dV \]
-
-\textbf{17.} \\
-
-\[ \int _T \sin{z} \, \text dV \]
-
-\textbf{18.} \\
-
-\[ \int _R \sin{z} \, \text dV \]
-
-\textbf{31.} A trough with triangular cross-section lies along the $x$-axis for
-$0 \leq x \leq 10$. The slanted sides are given by $z = y$ and $z = -y$ for
-$0 \leq z \leq 1$ and the ends by $x = 0$ and $x = 10$, where $x, y, z$ are in meters.
-The trough contains a sludge whose density at the point $(x, y, z)$ is
-$\delta = e^{-3x}$ kg per $m^3$. \\
-
-\textbf{a)} Express the total mass of sludge in the trough in terms of triple
-integrals. \\
-
-\textbf{b)} Express the total mass of sludge in the trough in terms of triple
-integrals. \\
-
-\textbf{55.} $E$ is the region bounded by $x = 0, y = 0, z = 0, z = 2,$
-and $2x + 4y + z = 4$. \\
-
-\textbf{57.} Figure 16.28 shows part of a spherical ball of radius 5 cm.
-Write an iterated triple integral which represents the volume of this region. \\
+	\item[\textbf{18.}]$\int _R \sin{z} \, \text dV $\\
+	El $\sin z$ es positivo en la mitad superior de $R$ y negativa con el mismo valor absoluto
+	en la mitad inferior de R por lo que la integral de $sin z$ es cero.
+\end{itemize}
 
 \textbf{66.} Find the center of mass of the tetrahedron that is bounded by the
 $xy, yz, xz$ planes and the plane $x + 2y + 3z = 1$. Assume the density is
 1 $gm/cm^3$ and $x, y, z$ are in centimeters. \\
+Sabemos que $m = \int_W 1dV$. Estableciendo los límites en función de $z$ y desta en
+términos de $y$
+tenemos que
+$$z=\frac{1-x-\tfrac{y}{2}}{3}$$ y
+$$y=\frac{1-x}{2}$$
+Entonces,
+\begin{equation}
+	\begin{split}
+		\int_WdV&=\int_0^1\tsint{\frac{1-x}{2}}\tsint{\frac{1-x-2y}{3}}dzdydx\\
+			    &=\int_0^1\tsint{\frac{1-x}{2}}z\bigg|_0^{\frac{1-x-2y}{3}}dydx\\
+				&=\int_0^1\tsint{\frac{1-x}{2}}\frac{1-x-2y}{3}dydx\\
+				&=\frac{1}{3}\int_0^1\tsint{\frac{1-x}{2}}\bp{1-x-2y}\ dydx\\
+				&=\frac{1}{3}\int_0^1y-xy-y^2\bigg|_0^{\frac{1-x}{2}}dx\\
+				&=\frac{1}{3}\int_0^1\Bp{\bp{\tfrac{1}{2}-\tfrac{x}{2}}-\bp{\tfrac{x}{2}
+					-\tfrac{x^2}{2}}-\tfrac{1}{2}\bp{\tfrac{1}{2}-x+\tfrac{x^2}{2}}}dx\\
+				&=\frac{1}{6}\int_0^1\Bp{\bp{1-x}-\bp{x-x^2}-\tfrac{1}{2}\bp{1-x+x^2}}dx\\
+				&=\frac{1}{6}\int_0^1\Bp{\bp{1-2x-x^2}-\tfrac{1}{2}\bp{1-x+x^2}}dx\\
+				&=\frac{1}{6}\int_0^1\Bp{\bp{1-2x-x^2}-\bp{\tfrac{1}{2}-\tfrac{x}{2}+\tfrac{x^2}{2}}}dx\\
+				&=\tfrac{1}{6}\Bp{\bp{x-x^2-\tfrac{x^3}{3}-\tfrac{x}{2}+\tfrac{x^2}{4}
+					-\tfrac{x^3}{6}}\Big|_0^1}\\
+				&=\tfrac{1}{6}\Bp{1-1-\tfrac{1}{3}-\tfrac{1}{2}+\tfrac{1}{4}-\tfrac{1}{6}}\\
+				&=\tfrac{1}{6}\Bp{\tfrac{12-12+4-6+3-2}{12}}\\
+				&=\tfrac{1}{6}\Bp{-\tfrac{1}{12}}\\
+				&=-\tfrac{1}{36}\\
+	\end{split}
+\end{equation}
+Pero cómo la masa siempre es positiva, entonces
+\[\int_WdV=\Big|-\tfrac{1}{36}\Big|=\tfrac{1}{36}\]
+Entonces, $\frac{1}{m}=\frac{1}{\frac{1}{36}}=36$
+De esto, tenemos las siguientes tres ecuaciones con sus resultados correspondientes
+evaluados en un CAS:
+\begin{equation}
+	\begin{split}
+		\bar{x}&=36\int_WdV\\
+			   &=\int_0^1\tsint{\frac{1-x}{2}}\tsint{\frac{1-x-2y}{3}}xdzdydx\\
+			   &=36\frac{1}{144}\\
+			   &=\frac{1}{4}\\
+		\bar{y}&=36\int_WdV\\
+			   &=\int_0^1\tsint{\frac{1-x}{2}}\tsint{\frac{1-x-2y}{3}}ydzdydx\\
+			   &=36\frac{1}{288}\\
+			   &=\frac{1}{8}\\
+		\bar{z}&=36\int_WdV\\
+			   &=\int_0^1\tsint{\frac{1-x}{2}}\tsint{\frac{1-x-2y}{3}}zdzdydx\\
+			   &=36\frac{1}{432}\\
+			   &=\frac{1}{12}\\
+	\end{split}
+\end{equation}
+
 
 Problems 67–69 concern a rotating solid body and its \textit{moment of inertia}
 about an axis; this moment relates angular acceleration to torque (an analogue
 of force). For a body of constant density and mass $m$ occupying a region $W$
 of volume $V$ , the moments of inertia about the coordinate axes are
 
-\[I_x = \frac{m}{V} \int _W (y^2 + z^2) \, \text d V \]
+\[I_x = \tfrac{m}{V} \int _W (y^2 + z^2) \, \text d V \]
 
-\[I_y = \frac{m}{V} \int _W (x^2 + z^2) \, \text d V \]
+\[I_y = \tfrac{m}{V} \int _W (x^2 + z^2) \, \text d V \]
 
-\[I_z = \frac{m}{V} \int _W (x^2 + z^2) \, \text d V \]
+\[I_z = \tfrac{m}{V} \int _W (x^2 + z^2) \, \text d V \]
 
 \textbf{67.} Find the moment of inertia about the $z$-axis of the rectangular
 solid of mass $m$ given by $0 \leq x \leq 1, 0 \leq y \leq 2, 0 \leq z \leq 3$. \\
 
+Como nos  pide encontrar el momento de inercia respecto al eje $z$ entonces tomamos de las ecuaciones de arriba y tomamos $I_z$
+\[I_{z} = \frac{m}{V} \int_W (x^2+y^2) dV\]
+Por lo que tenemos que integrar : $\frac{m}{6} \int_W x^2+ y^2 dV$\\
+Sustituyendo las regiones de integración:
+\[\frac{m}{6} \int_0^1 \int_0^2 \int_0^3 x^2 + y^2 dz dy dx\]
+Resolveremos en el siguiente orden:
+\[\frac{m}{6} \left[ \int_0^1\left[ \int_0^2\left[ \int_0^3 x^2 + y^2 dz \right] dy \right] dx \right] \]
+Como en $\int_0 ^3 x^2+ y^2 dz$ es una integral respecto a $z$ y no existe esta variable dentro de la ecuación $x^2+ y^2$ entonces evaluamos en $z = 3$ y :
+\[\frac{m}{6} \int_0^1 \int_0^2 3\left( x^2+y^2 \right) dy dx\]
+Ahora integramos respecto a $y$:
+\[\frac{m}{2} \int_0^1 \left( x^2y+ y^3/3 \right) \vert_0^2 dx\]
+Evaluamos con $y= 2$ y con $y= 0$ y tenemos que :
+\[\frac{m}{2} \int_0^1 \left( 2x^2+ 8/3 \right) dx = \frac{5m}{3}\]
+Calculamos la integral respecto a $x$
+\[\frac{m}{2} \left( 2x^3/3 + 8/3 x \right) \vert_0^1\]
 Are the statements in Problems 74–83 true or false? Give reasons for your answer. \\
-
-\textbf{75.} The region of integration of the triple iterated integral
-$\int_0^1 \int_0^1 \int_0^x f dz dy dx $ lies above a square in the $xy$-plane
-and below a plane. \\
-
-\textbf{78.} The iterated integrals $\int_{-1}^1 \int_0^1 \int_0^{1-x^2} f dz dy dx $
-and $\int_0^1 \int_0^1 \int_{-\sqrt{1-z}}^{\sqrt{1-z}} f dz dy dx $ are equal. \\
-
-
-\textbf{80.} If $W$ is the unit cube $0 \leq x \leq 1, 0 \leq y \leq 1, 0 \leq z \leq 1$
-and $ \int _W f \, \text dV = 0$, then $f = 0$ everywhere in the unit. \\
 
 \end{document}
