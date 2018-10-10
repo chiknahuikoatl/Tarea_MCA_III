@@ -6,6 +6,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{float}
 \graphicspath{ {images/} }
 
 \begin{document}
@@ -711,6 +712,29 @@ Are the statements in Problems 74–83 true or false? Give reasons for your answ
 \textbf{75.} The region of integration of the triple iterated integral
 $\int_0^1 \int_0^1 \int_0^x f dz dy dx $ lies above a square in the $xy$-plane
 and below a plane. \\
+
+Cierto, pues por los límites de integración definidos, podemos decir que el
+cuadrado en el plano $xy$ está caracterizado por los intervalos.
+	$$ 0 \leq x \leq 1, 0 \leq y \leq 1 $$
+
+formando así el cuadrado una región dada por:
+	$$ [0,1] \times [0,1] $$
+
+en el plano $xy$.\\
+
+Luego, por los límites definidos para la variación de la función en $z$, notemos
+que $z$ toma valores entre $z = 0$ y $z = x$, a saber, este último es un plano,
+cuya gráfica es la siguiente:
+
+\begin{figure}[H]
+	\includegraphics[scale=0.3]{plane.png}
+	\centering
+	\caption{Plano $z = x$.}
+	\centering
+\end{figure}
+
+Así, se cumple que la región se ubica sobre la región $[0,1] \times [0,1]$ en el
+plano $xy$ y bajo el plano $z = x$.\\
 
 \textbf{78.} The iterated integrals $\int_{-1}^1 \int_0^1 \int_0^{1-x^2} f dz dy dx $
 and $\int_0^1 \int_0^1 \int_{-\sqrt{1-z}}^{\sqrt{1-z}} f dz dy dx $ are equal. \\
