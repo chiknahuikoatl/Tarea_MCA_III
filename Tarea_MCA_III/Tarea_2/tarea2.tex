@@ -599,8 +599,57 @@ $\delta = e^{-3x}$ kg per $m^3$. \\
 \textbf{a)} Express the total mass of sludge in the trough in terms of triple
 integrals. \\
 
-\textbf{b)} Express the total mass of sludge in the trough in terms of triple
-integrals. \\
+Definimos los límites de la región de integración, por la región dada se tiene:
+	$$ 0 \leq x \leq 10 $$
+
+Ahora, graficando los planos $z = y$ y $z = -y$ se tiene:
+
+\begin{figure}[H]
+	\includegraphics[scale=0.3]{intregion.png}
+	\centering
+	\caption{Gráfica de la región de integración.}
+	\centering
+\end{figure}
+
+Notemos, entonces que $z$ está (por definición) acotada superiormente por
+$z = 1$ e inferiormente, por la gráfica de $z = y$ y $z = -y$.\\
+
+Asimismo, los valores de $y$ están acotados mediante
+	$$ 0 \leq y \leq 1$$
+ya que de las ecuaciones $z = y$, $z = -y$ se deducen los valores extremos
+que puede tomar $y$ cuando $z$ vive en el intervalo $[0,1]$
+
+Considerando que la gráfica es simétrica con respecto al plano $xz$, podemos
+definir los límites de integración como sigue:
+
+	$$ 2 \int_{0}^{10}\int_{0}^{1}\int_{y}^{1} e^{-3x} dz dy dx  $$
+
+puesto que calculamos la masa de la mitad de la región dada mediante las integrales,
+y obtenemos la masa total multiplicando el resultado por 2.
+
+
+\textbf{b)} Find the mass. \\
+
+	Ahora, para encontrar la masa, evaluamos la integral triple, así:
+
+	$$ 2 \int_{0}^{10}\int_{0}^{1}\int_{y}^{1} e^{-3x} dz dy dx  $$
+	$$ =  2 \int_{0}^{10}\int_{0}^{1} e^{-3x} z \Big|_{y}^{1} dy dx  $$
+	$$ =  2 \int_{0}^{10}\int_{0}^{1} e^{-3x} - ye^{-3x}  dy dx  $$
+	$$ =  2 \int_{0}^{10} e^{-3x} \Big[\int_{0}^{1} dy - \int_{0}^{1} y dy \Big] dx  $$
+	$$ =  2 \int_{0}^{10} e^{-3x} \Big[ y \Big|_{0}^{1} - \frac{y^2}{2} \Big|_{0}^{1} \Big] dx  $$
+	$$ =  2 \int_{0}^{10} e^{-3x} \Big[ 1 - \frac{1}{2} \Big] dx  $$
+	$$ =  2 \int_{0}^{10} e^{-3x} \Big[ \frac{1}{2} \Big] dx  $$
+	$$ =  \int_{0}^{10} e^{-3x} dx  $$
+
+tomando entonces $u = -3x$, $ - \frac{1}{3} du = dx$
+
+	$$ = - \frac{1}{3} \int_{u(0)}^{u(10)} e^{u} du  $$
+	$$ = - \frac{1}{3}  e^{-3x} \Big|_{0}^{10} du  $$
+	$$ = - \frac{1}{3} \Big[ e^{-30} - e^0 \Big]  $$
+	$$ = - \frac{ e^{-30} - e^0  }{3}  $$
+	$$ = \frac{ e^0 - e^{-30} }{3}  $$
+	$$ = \frac{ 1 - e^{-30} }{3}  $$
+
 
 \textbf{55.} $E$ is the region bounded by $x = 0, y = 0, z = 0, z = 2,$
 and $2x + 4y + z = 4$. \\
