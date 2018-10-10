@@ -654,6 +654,53 @@ tomando entonces $u = -3x$, $ - \frac{1}{3} du = dx$
 \textbf{55.} $E$ is the region bounded by $x = 0, y = 0, z = 0, z = 2,$
 and $2x + 4y + z = 4$. \\
 
+
+La figura 16.2.7 muestra porciones triangulares de los planos
+	$$ 2x + 4y + z = 4 $$
+	$$ 3x - 2y = 0$$
+	$$ z = 2$$
+y los tres planos de coordenadas $x = 0$, $y = 0$ y $z = 0$.\\
+
+Para la región sólida E, definimos una integral iterada para la integral
+	$$ \int\limits_{E} f(x,y,z) dV $$
+
+\begin{figure}[H]
+	\includegraphics[scale=0.3]{triangle.png}
+	\centering
+\end{figure}
+
+$\cdot$ E es la región delimitada por $x = 0, y = 0, z = 0, z = 2$ y $2x + 4y + z = 4$.\\
+
+$\cdot$ Z se encuentra delimitada entre $0$ y $2$.\\
+	Observamos que integrando en la dirección de $x$, se cumple que si.\\
+
+$\cdot$ Si $x = 0$, entonces el lado trasero de E está dado por esta expresión,
+	y el lado frontal de E estará dado por $2x + 4y + z = 4$, lo cual equivale a
+		$$ 2x = 4 - 4y - z $$
+		$$ x = \frac{4 - 4y - z}{2} $$
+		$$ x = 2 - 2y - \frac{1}{2}z $$
+
+Proyectando la región E en el plano $yz$, tenemos la región delimitada por
+$y = 0, z = 0, z = 2,$ y $2x + 4y + z = 4$, como se muestra:
+
+\begin{figure}[H]
+	\includegraphics[scale=0.3]{trapezoid.png}
+	\centering
+	\caption{Región E en el plano yz.}
+	\centering
+\end{figure}
+
+
+Luego, si se integra en la dirección de $y$, los límites de integración para $y = 0$
+	$$ x = 2 - 2(0) - \frac{1}{2}z $$
+	$$ x = 2 - \frac{1}{2}z $$
+	$$ x = 1 - \frac{1}{4}z $$
+
+Se sigue que la integral iterada resultante correponde a :
+	$$ \int\limits_{E} f(x,y,z) dV  $$
+	$$ = \int_{0}^{1}\int_{0}^{1 - \frac{1}{4}z}
+		 \int_{0}^{2 - 2y - \frac{1}{2}z} f(x,y,z) dxdydz  $$
+
 \textbf{57.} Figure 16.28 shows part of a spherical ball of radius 5 cm.
 Write an iterated triple integral which represents the volume of this region. \\
 
