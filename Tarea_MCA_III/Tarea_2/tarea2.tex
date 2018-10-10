@@ -739,6 +739,47 @@ plano $xy$ y bajo el plano $z = x$.\\
 \textbf{78.} The iterated integrals $\int_{-1}^1 \int_0^1 \int_0^{1-x^2} f dz dy dx $
 and $\int_0^1 \int_0^1 \int_{-\sqrt{1-z}}^{\sqrt{1-z}} f dz dy dx $ are equal. \\
 
+Cierto.\\
+Usando el graficador "Grapher" de macOS, pudimos graficar los límites de las
+regiones establecidas por ambas integrales, pintando la primera region
+de color rosa y la segunda región de azul, para verificar que precisamente se
+trate de la misma región de integración, consideramos para hacer más explícita
+la gráfica comprendida entre
+	$$ -1 \leq x \leq 1, 0 \leq y, \leq 1, 0 \leq z \leq 1 $$
+
+que son los valores extremos para las variables en la definición de los límites,
+así, podemos observar la primera región:
+
+\begin{figure}[H]
+	\includegraphics[scale=0.3]{graph1.png}
+	\centering
+	\caption{Región primera integral.}
+	\centering
+\end{figure}
+
+ahora, consideremos la segunda región:
+\begin{figure}[H]
+	\includegraphics[scale=0.3]{graph2.png}
+	\centering
+	\caption{Región segunda integral.}
+	\centering
+\end{figure}
+
+como las regiones resultan ser iguales, y por hipótesis, se integra la misma
+función, entonces las integrales son iguales.\\
+
+Nota: esta es la entrada del programa Grapher, donde puede observarse que
+las regiones se superponen al ser iguales (no graficamos algunas funciones
+para hacer legible la imagen, se entiende que las gráficas faltantes
+corresponden al cubo que encierra la gráfica).
+
+\begin{figure}[H]
+	\includegraphics[scale=0.3]{grapher.png}
+	\centering
+	\caption{Entrada del programa Grapher en macOS}
+	\centering
+\end{figure}
+
 \textbf{80.} If $W$ is the unit cube $0 \leq x \leq 1, 0 \leq y \leq 1, 0 \leq z \leq 1$
 and $ \int _W f \, \text dV = 0$, then $f = 0$ everywhere in the unit. \\
 
