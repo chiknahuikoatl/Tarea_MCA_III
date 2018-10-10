@@ -14,6 +14,7 @@
 \newcommand{\BP}[1]{\bigg( #1 \bigg)} %Paréntesis demasiado grandes
 \newcommand{\Bp}[1]{\Big( #1 \Big)} %Paréntesis muy grandes
 \newcommand{\bp}[1]{\big( #1 \big)} %Paréntesis grandes pero no tanto
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}} %Evaluación
 
 %Macros específicos
 \newcommand{\tsint}[1]{\int_0^{#1}} %Integral para el ejercicio 37, lím. inf. 0.
@@ -279,6 +280,40 @@ the region R shown in the accompanying figure. \\
 \centering
 \end{figure}
 
+Se tiene que la evaluación de la integral doble para la región (separando la
+región a integrar en tres segmentos)está dada por:
+	$$ \int_{-2}^{-1}\int_{0}^{2} xy^2 dydx +
+	   \int_{-1}^{1}\int_{1}^{2} xy^2 dydx +
+	   \int_{1}^{2}\int_{0}^{2} xy^2 dydx $$
+
+luego, esto es equivalente a :
+	$$ \int_{-2}^{-1} x \int_{0}^{2} y^2 dydx +
+		\int_{-1}^{1} x \int_{1}^{2} y^2 dydx +
+		\int_{1}^{2} x \int_{0}^{2} y^2 dydx $$
+
+	$$ \int_{-2}^{-1} x \Eval{\frac{y^3}{3}}{0}{2} dx +
+		\int_{-1}^{1} x \Eval{\frac{y^3}{3}}{1}{2} dx +
+		\int_{1}^{2} x \Eval{\frac{y^3}{3}}{0}{2} dx $$
+
+	$$ \int_{-2}^{-1} x \frac{8}{3} dx +
+		\int_{-1}^{1} x \frac{7}{3} dx +
+		\int_{1}^{2} x \frac{8}{3} dx $$
+
+	$$  \frac{8}{3} \int_{-2}^{-1} x dx +
+		\frac{7}{3} \int_{-1}^{1} x  dx +
+		\frac{8}{3} \int_{1}^{2} x  dx $$
+
+	$$  \frac{8}{3} \Eval{\frac{x^2}{2}}{-2}{-1} +
+		\frac{7}{3} \Eval{\frac{x^2}{2}}{-1}{1} +
+		\frac{8}{3} \Eval{\frac{x^2}{2}}{1}{2} $$
+
+	$$  \frac{8}{3} \Bp{- \frac{3}{2}} +
+		\frac{7}{3} \Bp{\frac{0}{2}} +
+		\frac{8}{3} \Bp{\frac{3}{2}} =
+		\frac{8}{3} \Bp{\frac{3}{2}} - \frac{8}{3} \Bp{\frac{3}{2}} = 0 $$
+
+así, se sigue que la evaluación de la integral en la región dada es igual a $0$.\\
+
 \textbf{63.} Suppose that the temperature in degrees Celsius at a point $(x, y)$
 on a flat metal plate is $T(x, y) = 5xy + x^2 $, where $x$ and $y$ are in meters.
 Find the average temperature of the diamond-shaped portion of the plate for which
@@ -405,6 +440,49 @@ coordinate planes and the plane \\
 
 \[ \int \limits_0^1 \, \int \limits_{\sqrt{y}}^1 \sqrt{2 + x^3} \, \text dx \, \text dy \]
 
+\begin{figure}[h]
+	\includegraphics[scale=0.3]{region.png}
+	\centering
+	\caption{Gráfica de la región de integración.}
+	\centering
+\end{figure}
+
+Notemos que la región comprendida se encuentra debajo de la función $x = \sqrt{y}$,
+estando el intervalo en el eje $x$ limitado a la izquierda por la función
+$x = \sqrt{y} $ y a la derecha por la constante $1$, de la misma forma, el
+intervalo en el eje $y$ está limitado inferiormente por la constante $0$
+y superiormente por la constante $1$.\\
+
+Ahora, para modificar los límites de integración, observamos gráficamente que
+los valores de $y$ quedarían limitados inferiormente por la constante $y = 0$
+y superiormente por la función $x = \sqrt{y}$, equivalente a $y = x^2$.\\
+
+Análogamente, para los valores de $x$, se encontarían limitados por la izquierda
+por la constante $x = 0$ y por la derecha por $x = 1$. \\
+
+Así, reescribimos los límites como:
+
+	$$ \int_{0}^{1}\int_{0}^{x^2} \sqrt{(2 + x^3)} dy dx  $$
+
+ahora, evaluando la integral, se tiene:
+	$$   \int_{0}^{1}\int_{0}^{x^2} \sqrt{(2 + x^3)} dy dx  $$
+	$$ = \int_{0}^{1}\sqrt{(2 + x^3)} \int_{0}^{x^2} dy dx  $$
+	$$ = \int_{0}^{1}\sqrt{(2 + x^3)} y \Big|_{0}^{x^2} dx  $$
+	$$ = \int_{0}^{1}\sqrt{(2 + x^3)} x^2  dx  $$
+
+tomando $u = 2 + x^3$ se tiene:
+
+	$$   \int_{0}^{1}\sqrt{(2 + x^3)} x^2  dx  $$
+	$$ = \frac{1}{3} \int_{u(0)}^{u(1)}\sqrt{u} du  $$
+	$$ = \frac{1}{3} \Eval{\frac{u^{\frac{3}{2}}}{\frac{3}{2}}}
+						 {u(0)}{u(1)}  $$
+	$$ = \frac{1}{3} \cdot \frac{2}{3} \Eval{u^{\frac{3}{2}}}
+								 {u(0)}{u(1)}  $$
+
+	$$ = \frac{2}{9} \Eval{ {2 + x^3}^{\frac{3}{2}} }{0}{1}  $$
+	$$ = \frac{2}{9} \Bp {{3}^{\frac{3}{2}} -
+						  {2}^{\frac{3}{2}}}  $$
+	$$ = \frac{2}{9} \Bp {3 \sqrt{3} - 2 \sqrt{2} }  $$
 
 \textbf{37.} \\
 
