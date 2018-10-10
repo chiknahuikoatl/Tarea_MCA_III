@@ -6,7 +6,10 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{float}
 \graphicspath{ {images/} }
+
+\allowdisplaybreaks
 
 \begin{document}
 
@@ -14,14 +17,32 @@
 \newcommand{\BP}[1]{\bigg( #1 \bigg)} %Paréntesis demasiado grandes
 \newcommand{\Bp}[1]{\Big( #1 \Big)} %Paréntesis muy grandes
 \newcommand{\bp}[1]{\big( #1 \big)} %Paréntesis grandes pero no tanto
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}} %Evaluación
 
 %Macros específicos
 \newcommand{\tsint}[1]{\int_0^{#1}} %Integral para el ejercicio 37, lím. inf. 0.
 
-\begin{center}
-		\textsc{\huge Matemáticas para las \\Ciencias Aplicadas III \\ Tarea 2\\}
-		\textbf{Alan Arteaga, Alma Sánchez, Jerónimo Almeida}
-\end{center}
+\begin{titlepage}
+	\centering
+	{\scshape\LARGE Universidad Nacional Autónoma de México \par}
+	\vspace{1cm}
+	{\scshape\Large Matemáticas para las Ciencias Aplicadas III\par}
+	\vspace{1.5cm}
+	{\huge\bfseries Tarea I\par}
+	\vspace{.5cm}
+	{\Large\itshape Alan Ernesto Arteaga Vázquez \par}
+    \vspace{.5cm}
+	{\Large\itshape Alma Rocío Sánchez Salgado \par}
+    \vspace{.5cm}
+	{\Large\itshape Jerónimo Almeida Rodríguez \par}
+	\vfill
+	 \includegraphics[width=0.5\textwidth]{../escudo_f-ciencias.png}
+	\vfill
+
+% Bottom of the page
+	{\large Miércoles 10 de Octubre del 2018 \par}
+\end{titlepage}
+
 
 \textbf{El cuaderno dónde se resuelven los problemas evaluados en un CAS se encuentran
 		en la siguiente liga:\\
@@ -39,7 +60,7 @@
 $ {\displaystyle \iint \limits_R } \, y \, \, \text dA; \, R$ is the region in the first
 quadrant enclosed between the circle $x^2 + y^2 = 25$ and the line $x + y = 5$. \\
 Entonces la integral al definir los límites de integración, tenemos:
-$${\displaystyle \iint \limits_R } \, y \, \, \ text dA = \, \int_{0}^{5} \int_{5-x}^{\sqrt{25 - x^2}} \, y\,dy\,dx$$
+$${\displaystyle \iint \limits_R } \, y \, \, \text dA = \, \int_{0}^{5} \int_{5-x}^{\sqrt{25 - x^2}} \, y\,dy\,dx$$
 
 Integramos con respecto a $y$
 $$ = \int_{0}^{5} \left[ \frac{y^2}{2} \right]_{5-x}^{\sqrt{25 - x^2}} \, dx$$
@@ -66,7 +87,7 @@ $$\frac{1}{2} * \frac{125}{3} = \frac{125}{6}$$
 
 Ahora la otra región
 
-$${\displaystyle \iint \limits_R } \, y \, \, \ text dA = \, \int_{0}^{5} \int_{5-x}^{\sqrt{25 - x^2}} \, y\,dy\,dx$$
+$${\displaystyle \iint \limits_R } \, y \, \, \text dA = \, \int_{0}^{5} \int_{5-x}^{\sqrt{25 - x^2}} \, y\,dy\,dx$$
 $$ = \int_{0}^{5} y [\sqrt{25-y^2} - (5-y)] \, dy$$
 
 Que lo podemos separar
@@ -86,7 +107,7 @@ enclosed by $y = sin^{-1} x, x = \frac{1}{\sqrt{2}},$ and $y = 0$. \\
 Notamos que la región R es el área entre las curvas:
 
 \begin{figure}[h]
-%\includegraphics[scale=0.5]{images/img3.png}
+\includegraphics[scale=0.5]{img3.png}
 \centering
 \end{figure}
 
@@ -96,100 +117,100 @@ Entonces, la integral iterada es:
 
 Resolviendo la integral interna:
 
-\begin{equation}
-\begin{split}
+%\begin{equation}
+\begin{align*}
         \int \limits_0^{\arcsin{x}} x \, \text dy & =  x \int \limits_0^{\arcsin{x}} \, \text dy \\ \notag
         & = x (\arcsin{x})
-\end{split}
-\end{equation}
+\end{align*}
+%\end{equation}
 
 Entonces:
 
-\begin{equation}
-\begin{split}
+%\begin{equation}
+\begin{align*}
         \int \limits_0^{\frac{1}{\sqrt{2}}}
         \int \limits_0^{\arcsin{x}} x \, \text dy \text dx &=
         \int \limits_0^{\frac{1}{\sqrt{2}}} x (\arcsin{x}) \, \text dx \\ \notag
-\end{split}
-\end{equation}
+\end{align*}
+%\end{equation}
 
 Integrando por partes:
 
-\begin{equation}
-\begin{split}
+%\begin{equation}
+\begin{align*}
         u = \arcsin{x} \rightarrow du = \frac{1}{\sqrt{1 - x^2}} dx \\ \notag
         dv = x dx \rightarrow v = \frac{x^2}{2}
-\end{split}
-\end{equation}
+\end{align*}
+%\end{equation}
 
 Entonces:
 
-\begin{equation}
-\begin{split}
+%\begin{equation}
+\begin{align*}
         \int \limits_0^{\frac{1}{\sqrt{2}}} x (\arcsin{x}) \, \text dx
         &= \arcsin{(x)} \frac{x^2}{2} \Bigg|_0^{\frac{1}{\sqrt{2}}}
         - \int \limits_0^{\frac{1}{\sqrt{2}}} \frac{x^2}{2} \frac{1}{\sqrt{1 - x^2}} dx \\ \notag
-\end{split}
-\end{equation}
+\end{align*}
+%\end{equation}
 
 Donde:
 
-\begin{equation}
-\begin{split}
+%\begin{equation}
+\begin{align*}
         \int \limits_0^{\frac{1}{\sqrt{2}}} \frac{x^2}{2} \frac{1}{\sqrt{1 - x^2}} dx
         &= \frac{1}{2} \int \limits_0^{\frac{1}{\sqrt{2}}} \frac{x^2}{\sqrt{1 - x^2}} dx \notag
-\end{split}
-\end{equation}
+\end{align*}
+%\end{equation}
 
 Por sustitución trigonométrica:
 
-\begin{equation}
-\begin{split}
+%\begin{equation}
+\begin{align*}
         x = \sin{(\theta)} \rightarrow \frac{dx}{d\theta} = \cos{(\theta)}
         \rightarrow dx = \cos{(\theta)} d\theta \\ \notag
-\end{split}
-\end{equation}
-\begin{equation}
-\begin{split}
+\end{align*}
+%\end{equation}
+%\begin{equation}
+\begin{align*}
         \cos{(\theta)} = \sqrt{1 - x^2} \\ \notag
         \sin{(\theta)} = x \rightarrow \sin^2{(\theta)} = x^2
-\end{split}
-\end{equation}
-\begin{equation}
-\begin{split}
+\end{align*}
+%\end{equation}
+%\begin{equation}
+\begin{align*}
         x = \sin{(\theta)} \rightarrow \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2} = \sin{(\theta)}
         \rightarrow \theta_1 = \frac{\pi}{4} \\ \notag
         x = \sin{(\theta)} \rightarrow 0 = \sin{(\theta)}
         \rightarrow \theta_2 = 0 \notag
-\end{split}
-\end{equation}
+\end{align*}
+%\end{equation}
 
 Entonces:
 
-\begin{equation}
-\begin{split}
+%\begin{equation}
+\begin{align*}
         \frac{1}{2} \int \limits_0^{\frac{\pi}{4}} \frac{x^2}{\sqrt{1 - x^2}} dx \notag
         &= \frac{1}{2} \int \limits_0^{\frac{\pi}{4}} \frac{\sin^2{\theta}}{\cos{\theta}} \cos{\theta} d\theta \\ \notag
         &= \frac{1}{2} \int \limits_0^{\frac{\pi}{4}} \sin^2{\theta} d\theta \\ \notag
         &= \frac{1}{2} \int \limits_0^{\frac{\pi}{4}} \frac{1 - \cos{2\theta}}{2} d\theta \\ \notag
         &= \frac{1}{4} \int \limits_0^{\frac{\pi}{4}} 1 - \cos{2\theta} d\theta \\ \notag
         &= \frac{1}{4} \left( \theta - \frac{1}{2} \sin{2\theta} \right) \Bigg|_0^{\frac{\pi}{4}}
-\end{split}
-\end{equation}
-\begin{equation}
-\begin{split}
+\end{align*}
+%\end{equation}
+%\begin{equation}
+\begin{align*}
         &= \frac{1}{4} \left( \frac{\pi}{4} - \frac{1}{2}\sin{\left(\frac{2\pi}{4} \right)} - 0 + \frac{1}{2} \sin{(2 \cdot 0)} \right)  \\ \notag
         &= \frac{1}{4} \left( \frac{\pi}{4} - \frac{1}{2}\sin{\left(\frac{\pi}{2} \right)} + \frac{1}{2} \sin{0} \right)  \\ \notag
         &= \frac{1}{4} \left( \frac{\pi}{4} - \frac{1}{2} \right)  \\ \notag
         &= \frac{\pi}{16} - \frac{1}{8}  \\ \notag
         &= \frac{\pi - 2}{16}
-\end{split}
-\end{equation}
+\end{align*}
+%\end{equation}
 
 Entonces:
 
-\begin{equation}
-\begin{split}
+%\begin{equation}
+\begin{align*}
         \int \limits_0^{\frac{1}{\sqrt{2}}} x (\arcsin{x}) \, \text dx
         &= \arcsin{(x)} \frac{x^2}{2} \Bigg|_0^{\frac{1}{\sqrt{2}}}
         - \int \limits_0^{\frac{1}{\sqrt{2}}} \frac{x^2}{2} \frac{1}{\sqrt{1 - x^2}} dx \\ \notag
@@ -200,8 +221,8 @@ Entonces:
          - \frac{\pi - 2}{16} \\ \notag
         &=  \frac{1}{4} \left( \arcsin{ \left( \frac{1}{\sqrt{2}} \right)}
          - \frac{\pi - 2}{4} \right) = 0.125 u^2 \\ \notag
-\end{split}
-\end{equation}
+\end{align*}
+%\end{equation}
 
 
 \textbf{28.} \\
@@ -229,8 +250,8 @@ Entonces:
 	}
 	\item[(c)]{
 		Find $ {\displaystyle \iint \limits_R } \, x \, \, \text dA $ \\
-		\begin{equation}
-		\begin{split}
+		%\begin{equation}
+		\begin{align*}
 			\int\int_Rx &=\int_1^3\int_{3-4x+4x^2}^{4x^3-x^4}xdydx\\
 				   	   &=\int_1^3yx\Big|_{3-4x+4x^2}^{4x^3-x^4}dx\\
 					    &=\int_1^3 (4x^4-x^5-3x+4x^2-4x^3)dx\\
@@ -243,8 +264,8 @@ Entonces:
 						&=\tfrac{2904}{15}-\tfrac{2685}{15}+\tfrac{5}{15}\\
 						&=\tfrac{2904-2685+5}{15}\\
 						&=\tfrac{224}{15}\\
-			\end{split}
-		\end{equation}
+			\end{align*}
+		%\end{equation}
 	}
 
 \end{itemize}
@@ -254,7 +275,7 @@ Entonces:
 \textbf{37.} \\
 
 \begin{figure}[h]
-%\includegraphics[scale=0.5]{images/img1.png}
+\includegraphics[scale=0.5]{img1.png}
 \centering
 \end{figure}
 
@@ -275,9 +296,43 @@ integration, and then by reversing the order of integration.\\
 \textbf{59.} Evaluate $ {\displaystyle \iint \limits_R } \, xy^2 \, \, \text dA $ over
 the region R shown in the accompanying figure. \\
 \begin{figure}[h]
-%\includegraphics[scale=0.5]{images/img2.png}
+\includegraphics[scale=0.5]{img2.png}
 \centering
 \end{figure}
+
+Se tiene que la evaluación de la integral doble para la región (separando la
+región a integrar en tres segmentos)está dada por:
+	$$ \int_{-2}^{-1}\int_{0}^{2} xy^2 dydx +
+	   \int_{-1}^{1}\int_{1}^{2} xy^2 dydx +
+	   \int_{1}^{2}\int_{0}^{2} xy^2 dydx $$
+
+luego, esto es equivalente a :
+	$$ \int_{-2}^{-1} x \int_{0}^{2} y^2 dydx +
+		\int_{-1}^{1} x \int_{1}^{2} y^2 dydx +
+		\int_{1}^{2} x \int_{0}^{2} y^2 dydx $$
+
+	$$ \int_{-2}^{-1} x \Eval{\frac{y^3}{3}}{0}{2} dx +
+		\int_{-1}^{1} x \Eval{\frac{y^3}{3}}{1}{2} dx +
+		\int_{1}^{2} x \Eval{\frac{y^3}{3}}{0}{2} dx $$
+
+	$$ \int_{-2}^{-1} x \frac{8}{3} dx +
+		\int_{-1}^{1} x \frac{7}{3} dx +
+		\int_{1}^{2} x \frac{8}{3} dx $$
+
+	$$  \frac{8}{3} \int_{-2}^{-1} x dx +
+		\frac{7}{3} \int_{-1}^{1} x  dx +
+		\frac{8}{3} \int_{1}^{2} x  dx $$
+
+	$$  \frac{8}{3} \Eval{\frac{x^2}{2}}{-2}{-1} +
+		\frac{7}{3} \Eval{\frac{x^2}{2}}{-1}{1} +
+		\frac{8}{3} \Eval{\frac{x^2}{2}}{1}{2} $$
+
+	$$  \frac{8}{3} \Bp{- \frac{3}{2}} +
+		\frac{7}{3} \Bp{\frac{0}{2}} +
+		\frac{8}{3} \Bp{\frac{3}{2}} =
+		\frac{8}{3} \Bp{\frac{3}{2}} - \frac{8}{3} \Bp{\frac{3}{2}} = 0 $$
+
+así, se sigue que la evaluación de la integral en la región dada es igual a $0$.\\
 
 \textbf{63.} Suppose that the temperature in degrees Celsius at a point $(x, y)$
 on a flat metal plate is $T(x, y) = 5xy + x^2 $, where $x$ and $y$ are in meters.
@@ -292,8 +347,8 @@ $\frac{\pi}{6} \leq y \leq \frac{\pi}{2}, y \leq x \leq \frac{\pi}{2}, 0 \leq z 
 
 Entonces, la integral iterada es:
 
-\begin{equation}
-\begin{split}
+%\begin{equation}
+\begin{align*}
         \int \limits_{\frac{\pi}{6}}^{\frac{\pi}{2}}
         \int \limits_{y}^{\frac{\pi}{2}}
         \int \limits_0^{xy} \cos{\frac{z}{y}} \, \text dz \, \text dx \, \text dy
@@ -322,22 +377,22 @@ Entonces, la integral iterada es:
         &=
         \int \limits_{\frac{\pi}{6}}^{\frac{\pi}{2}} y
         \cos{y} \, \text dy \\ \notag
-\end{split}
-\end{equation}
+\end{align*}
+%\end{equation}
 
 Integrando por partes:
 
-\begin{equation}
-\begin{split}
+%\begin{equation}
+\begin{align*}
         u = y \rightarrow du = dy \\ \notag
         dv = \cos{y} dy \rightarrow v = \sin{y}
-\end{split}
-\end{equation}
+\end{align*}
+%\end{equation}
 
 Entonces:
 
-\begin{equation}
-\begin{split}
+%\begin{equation}
+\begin{align*}
         \int \limits_{\frac{\pi}{6}}^{\frac{\pi}{2}} y
         \cos{y} \, \text dy
         &= y \sin{y} \Big|_{\frac{\pi}{6}}^{\frac{\pi}{2}}
@@ -348,8 +403,8 @@ Entonces:
         - \cos{\left( \frac{\pi}{6} \right)} \\ \notag
         &= \frac{\pi}{2} - \frac{\pi}{6} \sin{\left( \frac{\pi}{6} \right)}
         - \cos{\left( \frac{\pi}{6} \right)} \approx 0.443 u^3 \\ \notag
-\end{split}
-\end{equation}
+\end{align*}
+%\end{equation}
 
 \textbf{37.} Let $G$ be the tetrahedron in the first octant bounded by the
 coordinate planes and the plane \\
@@ -367,8 +422,8 @@ coordinate planes and the plane \\
 \end{itemize}
 
 (b) Evaluate any one of the six to show that the volume of $G$ is $\tfrac{1}{6} abc$. \\
-\begin{equation}
-	\begin{split}
+%\begin{equation}
+	\begin{align*}
 		V_G(xyz)&=\tsint{c}\tsint{b(1-\tfrac{z}{c})}\tsint{a(1-\tfrac{z}{c}-\tfrac{y}{b})}dxdydz\\
 				&=\tsint{c}\tsint{b(1-\tfrac{z}{c})}x\Big|_0^{a(1-\tfrac{z}{c}-\tfrac{y}{b})}dydz\\
 				&=\tsint{c}\tsint{b(1-\tfrac{z}{c})}a(1-\tfrac{z}{c}-\tfrac{y}{b})dydz\\
@@ -390,13 +445,27 @@ coordinate planes and the plane \\
 				&=ab\bp{\tfrac{c}{2}+\tfrac{c}{6}-\tfrac{c}{2}}\\
 				&=abc\bp{\tfrac{1}{2}+\tfrac{1}{6}-\tfrac{1}{2}}\\
 				&=\frac{1}{6}abc\\
-	\end{split}
-\end{equation}
+	\end{align*}
+%\end{equation}
 
 \textbf{38.} Use a triple integral to derive the formula for the volume of the ellipsoid
 
 \[ \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1 \]
-
+Optamos por usar coordenadas esféricas ya que resulta más sencillo deducir el volumen así para este caso.
+Tenemos que :
+\[x = ar \cos \phi \sin\theta, y = br \sin \phi \sin \theta, z= cr \cos \theta\]
+Sabemos que el valor absoluto del jacobiano de coordenadas rectangulares a esféricas es :
+\[|I|= abr^2 \sin \theta\], entonces
+\[dxdydz= abcr^2 \sin \theta dr d\phi d\theta\]
+Notemos que podemos dividir el volumen de la elipsoide en octantes, tomaremos por comodidad el primero,
+donde $(x \geq 0, y \geq 0, z \geq 0)$
+Los límites que tenemos son:
+\[0 \geq r \geq 1, 0\geq \phi \geq \pi / 2 , 0 \geq \theta \geq \pi /2\]
+Entonces el volumen es :
+\[V = \int \int_V \int abcr^2 sin \theta dr d\phi d\theta = 8 \int_0^{\pi/2} d\phi \int_0^1 r^2 dr \int_0^{\pi /2}\sin \theta d\theta\]
+\[= 8abc \int_0^{\pi /2} d\phi \int_0^1 r^2dr. \left[-\cos \theta |_0^{\pi /2} \right]\]
+\[8abc \int_0^{\pi / 2} d\phi \int_0^1 r dr . \left( - \cos \pi / 2 + \cos 0\right) = 8abc \int_0^{\pi /2} d\phi. \left[ \left( \dfrac{r^3}{3}\right)|_0^1\right]\]
+\[\dfrac{8abc}{3} \int_0 ^{\pi / 2} d\phi = \dfrac{8abc}{3}. \left[\phi |_0^{\pi /2} \right] = \dfrac{4}{3}\pi abc\]
 \textbf{Hughes-Hallet} \\
 
 \textbf{Sección 16.2}\\
@@ -405,6 +474,49 @@ coordinate planes and the plane \\
 
 \[ \int \limits_0^1 \, \int \limits_{\sqrt{y}}^1 \sqrt{2 + x^3} \, \text dx \, \text dy \]
 
+\begin{figure}[h]
+	\includegraphics[scale=0.3]{region.png}
+	\centering
+	\caption{Gráfica de la región de integración.}
+	\centering
+\end{figure}
+
+Notemos que la región comprendida se encuentra debajo de la función $x = \sqrt{y}$,
+estando el intervalo en el eje $x$ limitado a la izquierda por la función
+$x = \sqrt{y} $ y a la derecha por la constante $1$, de la misma forma, el
+intervalo en el eje $y$ está limitado inferiormente por la constante $0$
+y superiormente por la constante $1$.\\
+
+Ahora, para modificar los límites de integración, observamos gráficamente que
+los valores de $y$ quedarían limitados inferiormente por la constante $y = 0$
+y superiormente por la función $x = \sqrt{y}$, equivalente a $y = x^2$.\\
+
+Análogamente, para los valores de $x$, se encontarían limitados por la izquierda
+por la constante $x = 0$ y por la derecha por $x = 1$. \\
+
+Así, reescribimos los límites como:
+
+	$$ \int_{0}^{1}\int_{0}^{x^2} \sqrt{(2 + x^3)} dy dx  $$
+
+ahora, evaluando la integral, se tiene:
+	$$   \int_{0}^{1}\int_{0}^{x^2} \sqrt{(2 + x^3)} dy dx  $$
+	$$ = \int_{0}^{1}\sqrt{(2 + x^3)} \int_{0}^{x^2} dy dx  $$
+	$$ = \int_{0}^{1}\sqrt{(2 + x^3)} y \Big|_{0}^{x^2} dx  $$
+	$$ = \int_{0}^{1}\sqrt{(2 + x^3)} x^2  dx  $$
+
+tomando $u = 2 + x^3$ se tiene:
+
+	$$   \int_{0}^{1}\sqrt{(2 + x^3)} x^2  dx  $$
+	$$ = \frac{1}{3} \int_{u(0)}^{u(1)}\sqrt{u} du  $$
+	$$ = \frac{1}{3} \Eval{\frac{u^{\frac{3}{2}}}{\frac{3}{2}}}
+						 {u(0)}{u(1)}  $$
+	$$ = \frac{1}{3} \cdot \frac{2}{3} \Eval{u^{\frac{3}{2}}}
+								 {u(0)}{u(1)}  $$
+
+	$$ = \frac{2}{9} \Eval{ {2 + x^3}^{\frac{3}{2}} }{0}{1}  $$
+	$$ = \frac{2}{9} \Bp {{3}^{\frac{3}{2}} -
+						  {2}^{\frac{3}{2}}}  $$
+	$$ = \frac{2}{9} \Bp {3 \sqrt{3} - 2 \sqrt{2} }  $$
 
 \textbf{37.} \\
 
@@ -439,6 +551,59 @@ $$ = \frac{1}{2} \left(e^2 - 1\right)$$
 in the triangle to one of the legs is one-third the length of the other leg.
 (The legs of a right triangle are the two sides that are not the hypotenuse.) \\
 
+Suponemos que el triángulo mide $a$ sobre el eje $x$ y $b$ sobre el eje $y$ de tal forma que
+sus tres esquinas quedan en los puntos ${(0,0), (a,0), (0,b)}$, su área es $A= \tfrac{ab}{2}$
+y está restringido por las siguientes tres ecuaciones:
+\begin{align*}
+	0&=y\\
+	0&=x\\
+	1&=\tfrac{x}{a}+\tfrac{y}{b}
+\end{align*}
+Procediendo de una manera similar a encontrar el centro de masa de una figura en el espacio,
+tenemos que:
+\[\tfrac{1}{A}\tsint{b}\tsint{-a(\tfrac{y}{b}-1)}ydxdy =
+  \tfrac{1}{A}\tsint{b}xy\Big|_0^{-a(\tfrac{y}{b}-1)}dy=
+  \tfrac{1}{A}\tsint{b}y(-a(\tfrac{y}{b}-1))dy=\]
+\[\tfrac{1}{A}\tsint{b}(-by(\tfrac{y}{b}-1)dy=
+  -\tfrac{a}{A}\tsint{b}y(\tfrac{y}{a}-1)dy=
+  -\tfrac{a}{A}\tsint{b}(\tfrac{y^2}{b}-x)dx=\]
+\[-\tfrac{a}{A}\Bp{\tfrac{y^3}{3b}-\tfrac{y^2}{2}}\Big|_0^b=
+  -\tfrac{a}{A}\Bp{\tfrac{b^3}{3b}-\tfrac{b^2}{2}}=
+  -\tfrac{a}{A}\Bp{\tfrac{b^2}{3}-\tfrac{b^2}{2}}=
+  -\tfrac{a}{A}\Bp{\tfrac{2b^2-3b^2}{6}}=\]
+\[-\tfrac{a}{A}\Bp{\tfrac{-b^2}{6}}=
+  -\tfrac{a}{\tfrac{ab}{2}}\Bp{\tfrac{-b^2}{6}}=
+  -\tfrac{2a}{ab}\Bp{\tfrac{-b^2}{6}}=
+  \tfrac{2a(b^2)}{6ab}=
+  \tfrac{b}{3}
+\]
+Por lo tanto, cualquer punto en el triángulo está a distancia de un tercio el tamaño del
+cateto sobre el eje $y$.\\
+Ahora queda por comprobar que la distancia desde cualquier punto del triángulo al eje $y$
+es de un tercio el tamaño del cateto sobre el eje $x$. Procedemos de manera similar al
+punto anterior:
+Observamos así que la distancia desde cualquier punto en el triángulo al eje $x$ es:
+\[\tfrac{1}{A}\tsint{a}\tsint{-b(\tfrac{x}{a}-1)}xdydx =
+  \tfrac{1}{A}\tsint{a}xy\Big|_0^{-b(\tfrac{x}{a}-1)}dx=
+  \tfrac{1}{A}\tsint{a}x(-b(\tfrac{x}{a}-1)dx=\]
+\[\tfrac{1}{A}\tsint{a}(-bx(\tfrac{x}{a}-1)dx=
+  -\tfrac{b}{A}\tsint{a}x(\tfrac{x}{a}-1)dx=
+  -\tfrac{b}{A}\tsint{a}(\tfrac{x^2}{a}-x)dx=\]
+\[-\tfrac{b}{A}\Bp{\tfrac{x^3}{3a}-\tfrac{x^2}{2}}\Big|_0^a=
+  -\tfrac{b}{A}\Bp{\tfrac{a^3}{3a}-\tfrac{a^2}{2}}=
+  -\tfrac{b}{A}\Bp{\tfrac{a^2}{3}-\tfrac{a^2}{2}}=
+  -\tfrac{b}{A}\Bp{\tfrac{2a^2-3a^2}{6}}=\]
+\[-\tfrac{b}{A}\Bp{\tfrac{-a^2}{6}}=
+  -\tfrac{b}{\tfrac{ab}{2}}\Bp{\tfrac{-a^2}{6}}=
+  -\tfrac{2b}{ab}\Bp{\tfrac{-a^2}{6}}=
+  \tfrac{2b(a^2)}{6ab}=
+  \tfrac{a}{3}
+\]
+Por lo tanto, la distancia desde cualquier punto en el triángulo al cateto sobre el
+eje $y$ es un tercio del tamaño del cateto opuesto a este.\\
+Por lo tanto, la distancia desde cualquier punto en el triángulo es de un tercio el
+tamaño del cateto opuesto.\\
+
 \textbf{62.} Find the area of the crescent-moon shape with circular arcs as edges
 and the dimensions shown in Figure 16.22. \\
 
@@ -453,8 +618,8 @@ al centro del círculo interior podemos formar un triángulo de altura $r_E=4$, 
 tamaño $r_I$ y longitud horizontal de tamaño $r_I-2$ (Obtenemos esta medida trazando una línea del
 centro de $I$ al centro del círculo $E$ que está a distancia $2$ del borde de $I$).\\
 De esta manera, por el teorema de Pitágoras, tenemos que
-\begin{equation}
-	\begin{split}
+%\begin{equation}
+	\begin{align*}
 		r_I^2	    &=4^2+(r_I)^2\\
 			 	    &=16+r_I^2-4r_I+4\\
 			 	    &=20+r_I^2-4r_I\\
@@ -462,8 +627,8 @@ De esta manera, por el teorema de Pitágoras, tenemos que
 		0 			&=20-4r_I\\
 		4r_I		&=20\\
 		r_I			&=5
-	\end{split}
-\end{equation}
+	\end{align*}
+%\end{equation}
 Luego, si suponemos que el centro de $I$ está en el origen, tenemos porque
 $$I={(x,y)|x^2+y^2=25}$$
 y que
@@ -473,15 +638,15 @@ $$x^2=25-y^2 \Rightarrow x=\sqrt{25-y^2}$$
 y
 $$(x-3)^2=16-y^2\Rightarrow x-3=\sqrt{16-y^2}\Rightarrow x=3+\sqrt{16-y^2}$$
 Así, tenemos que el área de la media luna es:
-\begin{equation}
-	\begin{split}
+%\begin{equation}
+	\begin{align*}
 		A&=\int_{-4}^4\int_{\sqrt{25-y^2}}^{3+\sqrt{16-y^2}}dxdy\\
 		 &=\int_{-4}^4x\Big|_{\sqrt{25-y^2}}^{3+\sqrt{16-y^2}}dy\\
 		 &=\int_{-4}^4\bp{3+\sqrt{16-y^2}-\sqrt{25-y^2}}dy\\
 		 &=12+8\pi-25sin^{-1}(\tfrac{4}{5})\\
 		 &=13.9504 \\
-	\end{split}
-\end{equation}
+	\end{align*}
+%\end{equation}
 La penúltima ecuación se obtuvo de evaluar la antepenúltima ecuación en el software
 de Mathematica y la última ecuación de evaluar este último resultado en la graficadora Desmos.
 
@@ -494,21 +659,20 @@ this sphere (with $z \geq 0$), and $B$ be the bottom half (with $z \leq 0$), and
 (with $x \leq 0$). \\
 \begin{itemize}
 	\item[\textbf{14.}]$ \int _T e^z \, \text dV$\\
-	Como $e^z$ es positiva en $T$, entonces la integral es positiva.
+	Como los límites de integración en T son positivos y como $e^z$ es una función asintótica cuyo rango son todos los reales mayores a cero, al iterar la suma de la función en la región T obtendremos una integral positiva.
 
 	\item[\textbf{15.}]$ \int _B e^z \, \text dV $\\
-	Como $e^z$ es positiva en B, la integral es posiitva
+
+	Aunque la región a integrar se encuentre en la parte negativa de $z$, sabemos que la función $e^z$ es positiva siempre, entonces al integrar la función en esa región seguimos teniendo una integral positiva.
 
 	\item[\textbf{16.}]$\int _S \sin{z} \, \text dV$\\
-	Tenemos que $\sin z$ es positiva en T y  es negativa con el mismo valor absoluto en la
-	mitad inferior de $R$ por lo que la integral de $\sin z$ es cero.
+	Tenemos que integrar $\sin z $ en la región que comprende a toda la esfera, sabemos que se localiza en el origen, entonces al integral la región $T$ tendremos una región positiva al integrarla y al integrar la otra mitad será negativa pero con el mismo valor que la de $T$, por lo que la integral será igual a cero. Tomamos en cuenta $z$ porque lo que hay que integrar está en función de $z$.
 
 	\item[\textbf{17.}]$ \int _T \sin{z} \, \text dV$\\
-	Tenemos que el $sin z $ es positiva en $T$ por lo que la integral es positiva
+	La integral en esa región es positiva puesto que se está tomando a $\sin z$  y $z$ es positiva en todo $T$
 
 	\item[\textbf{18.}]$\int _R \sin{z} \, \text dV $\\
-	El $\sin z$ es positivo en la mitad superior de $R$ y negativa con el mismo valor absoluto
-	en la mitad inferior de R por lo que la integral de $sin z$ es cero.
+	Sabemos que la región $R$ es igual a la mitad izquierda de la esfera, que tiene una región donde $z$ es positiva y una donde es negativa, ambas son iguales en cuanto al valor absoluto por lo que al integrar $sin$ en función de $z$ obtendremos una integral igual a cero.
 \end{itemize}
 
 \textbf{31.} A trough with triangular cross-section lies along the $x$-axis for
@@ -520,8 +684,57 @@ $\delta = e^{-3x}$ kg per $m^3$. \\
 \textbf{a)} Express the total mass of sludge in the trough in terms of triple
 integrals. \\
 
-\textbf{b)} Express the total mass of sludge in the trough in terms of triple
-integrals. \\
+Definimos los límites de la región de integración, por la región dada se tiene:
+	$$ 0 \leq x \leq 10 $$
+
+Ahora, graficando los planos $z = y$ y $z = -y$ se tiene:
+
+\begin{figure}[H]
+	\includegraphics[scale=0.3]{intregion.png}
+	\centering
+	\caption{Gráfica de la región de integración.}
+	\centering
+\end{figure}
+
+Notemos, entonces que $z$ está (por definición) acotada superiormente por
+$z = 1$ e inferiormente, por la gráfica de $z = y$ y $z = -y$.\\
+
+Asimismo, los valores de $y$ están acotados mediante
+	$$ 0 \leq y \leq 1$$
+ya que de las ecuaciones $z = y$, $z = -y$ se deducen los valores extremos
+que puede tomar $y$ cuando $z$ vive en el intervalo $[0,1]$
+
+Considerando que la gráfica es simétrica con respecto al plano $xz$, podemos
+definir los límites de integración como sigue:
+
+	$$ 2 \int_{0}^{10}\int_{0}^{1}\int_{y}^{1} e^{-3x} dz dy dx  $$
+
+puesto que calculamos la masa de la mitad de la región dada mediante las integrales,
+y obtenemos la masa total multiplicando el resultado por 2.
+
+
+\textbf{b)} Find the mass. \\
+
+	Ahora, para encontrar la masa, evaluamos la integral triple, así:
+
+	$$ 2 \int_{0}^{10}\int_{0}^{1}\int_{y}^{1} e^{-3x} dz dy dx  $$
+	$$ =  2 \int_{0}^{10}\int_{0}^{1} e^{-3x} z \Big|_{y}^{1} dy dx  $$
+	$$ =  2 \int_{0}^{10}\int_{0}^{1} e^{-3x} - ye^{-3x}  dy dx  $$
+	$$ =  2 \int_{0}^{10} e^{-3x} \Big[\int_{0}^{1} dy - \int_{0}^{1} y dy \Big] dx  $$
+	$$ =  2 \int_{0}^{10} e^{-3x} \Big[ y \Big|_{0}^{1} - \frac{y^2}{2} \Big|_{0}^{1} \Big] dx  $$
+	$$ =  2 \int_{0}^{10} e^{-3x} \Big[ 1 - \frac{1}{2} \Big] dx  $$
+	$$ =  2 \int_{0}^{10} e^{-3x} \Big[ \frac{1}{2} \Big] dx  $$
+	$$ =  \int_{0}^{10} e^{-3x} dx  $$
+
+tomando entonces $u = -3x$, $ - \frac{1}{3} du = dx$
+
+	$$ = - \frac{1}{3} \int_{u(0)}^{u(10)} e^{u} du  $$
+	$$ = - \frac{1}{3}  e^{-3x} \Big|_{0}^{10} du  $$
+	$$ = - \frac{1}{3} \Big[ e^{-30} - e^0 \Big]  $$
+	$$ = - \frac{ e^{-30} - e^0  }{3}  $$
+	$$ = \frac{ e^0 - e^{-30} }{3}  $$
+	$$ = \frac{ 1 - e^{-30} }{3}  $$
+
 
 \textbf{55.} $E$ is the region bounded by $x = 0, y = 0, z = 0, z = 2,$
 and $2x + 4y + z = 4$. \\
@@ -530,7 +743,7 @@ and $2x + 4y + z = 4$. \\
 Write an iterated triple integral which represents the volume of this region. \\
 
 \begin{figure}[h]
-%\includegraphics[scale=0.5]{images/img4.png}
+\includegraphics[scale=0.5]{img4.png}
 \centering
 \end{figure}
 
@@ -555,8 +768,8 @@ tenemos que
 $$z=\frac{1-x-\tfrac{y}{2}}{3}$$ y
 $$y=\frac{1-x}{2}$$
 Entonces,
-\begin{equation}
-	\begin{split}
+%\begin{equation}
+	\begin{align*}
 		\int_WdV&=\int_0^1\tsint{\frac{1-x}{2}}\tsint{\frac{1-x-2y}{3}}dzdydx\\
 			    &=\int_0^1\tsint{\frac{1-x}{2}}z\bigg|_0^{\frac{1-x-2y}{3}}dydx\\
 				&=\int_0^1\tsint{\frac{1-x}{2}}\frac{1-x-2y}{3}dydx\\
@@ -573,15 +786,15 @@ Entonces,
 				&=\tfrac{1}{6}\Bp{\tfrac{12-12+4-6+3-2}{12}}\\
 				&=\tfrac{1}{6}\Bp{-\tfrac{1}{12}}\\
 				&=-\tfrac{1}{36}\\
-	\end{split}
-\end{equation}
+	\end{align*}
+%\end{equation}
 Pero cómo la masa siempre es positiva, entonces
 \[\int_WdV=\Big|-\tfrac{1}{36}\Big|=\tfrac{1}{36}\]
 Entonces, $\frac{1}{m}=\frac{1}{\frac{1}{36}}=36$
 De esto, tenemos las siguientes tres ecuaciones con sus resultados correspondientes
 evaluados en un CAS:
-\begin{equation}
-	\begin{split}
+%\begin{equation}
+	\begin{align*}
 		\bar{x}&=36\int_WdV\\
 			   &=36\int_0^1\tsint{\frac{1-x}{2}}\tsint{\frac{1-x-2y}{3}}xdzdydx\\
 			   &=36\frac{1}{144}\\
@@ -594,8 +807,8 @@ evaluados en un CAS:
 			   &=36\int_0^{\tfrac{1}{3}}\tsint{1-3z}\tsint{\frac{1-x-3z}{2}}zdzdydx\\
 			   &=36\frac{1}{432}\\
 			   &=\frac{1}{12}\\
-	\end{split}
-\end{equation}
+	\end{align*}
+%\end{equation}
 
 
 Problems 67–69 concern a rotating solid body and its \textit{moment of inertia}
@@ -634,8 +847,72 @@ Are the statements in Problems 74–83 true or false? Give reasons for your answ
 $\int_0^1 \int_0^1 \int_0^x f dz dy dx $ lies above a square in the $xy$-plane
 and below a plane. \\
 
+Cierto, pues por los límites de integración definidos, podemos decir que el
+cuadrado en el plano $xy$ está caracterizado por los intervalos.
+	$$ 0 \leq x \leq 1, 0 \leq y \leq 1 $$
+
+formando así el cuadrado una región dada por:
+	$$ [0,1] \times [0,1] $$
+
+en el plano $xy$.\\
+
+Luego, por los límites definidos para la variación de la función en $z$, notemos
+que $z$ toma valores entre $z = 0$ y $z = x$, a saber, este último es un plano,
+cuya gráfica es la siguiente:
+
+\begin{figure}[H]
+	\includegraphics[scale=0.3]{plane.png}
+	\centering
+	\caption{Plano $z = x$.}
+	\centering
+\end{figure}
+
+Así, se cumple que la región se ubica sobre la región $[0,1] \times [0,1]$ en el
+plano $xy$ y bajo el plano $z = x$.\\
+
 \textbf{78.} The iterated integrals $\int_{-1}^1 \int_0^1 \int_0^{1-x^2} f dz dy dx $
 and $\int_0^1 \int_0^1 \int_{-\sqrt{1-z}}^{\sqrt{1-z}} f dz dy dx $ are equal. \\
+
+Cierto.\\
+Usando el graficador "Grapher" de macOS, pudimos graficar los límites de las
+regiones establecidas por ambas integrales, pintando la primera region
+de color rosa y la segunda región de azul, para verificar que precisamente se
+trate de la misma región de integración, consideramos para hacer más explícita
+la gráfica comprendida entre
+	$$ -1 \leq x \leq 1, 0 \leq y, \leq 1, 0 \leq z \leq 1 $$
+
+que son los valores extremos para las variables en la definición de los límites,
+así, podemos observar la primera región:
+
+\begin{figure}[H]
+	\includegraphics[scale=0.3]{graph1.png}
+	\centering
+	\caption{Región primera integral.}
+	\centering
+\end{figure}
+
+ahora, consideremos la segunda región:
+\begin{figure}[H]
+	\includegraphics[scale=0.3]{graph2.png}
+	\centering
+	\caption{Región segunda integral.}
+	\centering
+\end{figure}
+
+como las regiones resultan ser iguales, y por hipótesis, se integra la misma
+función, entonces las integrales son iguales.\\
+
+Nota: esta es la entrada del programa Grapher, donde puede observarse que
+las regiones se superponen al ser iguales (no graficamos algunas funciones
+para hacer legible la imagen, se entiende que las gráficas faltantes
+corresponden al cubo que encierra la gráfica).
+
+\begin{figure}[H]
+	\includegraphics[scale=0.3]{grapher.png}
+	\centering
+	\caption{Entrada del programa Grapher en macOS}
+	\centering
+\end{figure}
 
 \textbf{80.} If $W$ is the unit cube $0 \leq x \leq 1, 0 \leq y \leq 1, 0 \leq z \leq 1$
 and $ \int _W f \, \text dV = 0$, then $f = 0$ everywhere in the unit. \\
@@ -645,13 +922,13 @@ realizar la integral en la región, el volumen inferior al plano se cancele con 
 volumen superior. Por ejemplo, si $f(x,y,z) = \frac{1}{2} - x$, el resultado
 de la integral es:
 
-\begin{equation}
-\begin{split}
+%\begin{equation}
+\begin{align*}
         \int_0^1 \int_0^1 \int_0^1 \left( \frac{1}{2} - x \right) \, \text dx \, \text dy \, \text dz
         &= \int_0^1 \int_0^1 \left( \frac{1}{2}x - \frac{x^2}{2} \right) \Bigg|_0^1 \, \text dy \, \text dz \\ \notag
         &= \int_0^1 \int_0^1 \left( \frac{1}{2} - \frac{1}{2} \right) \, \text dy \, \text dz \\ \notag
         &= \int_0^1 \int_0^1 0 \, \text dy \, \text dz = 0 \\ \notag
-\end{split}
-\end{equation}
+\end{align*}
+%\end{equation}
 
 \end{document}
